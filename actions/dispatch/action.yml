@@ -1,0 +1,11 @@
+name: 'Dispatch'
+description: 'Send a dispatch event'
+inputs:
+  event:  # id of input
+    description: 'Event webhook payload'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.event }}
