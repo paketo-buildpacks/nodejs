@@ -24,4 +24,4 @@ jobs:
     - name: Send Dispatch Event
       uses: thitch97/nodejs/actions/dispatch@master
       with:
-        event: "${{ github.event }}"
+        event_path: "${{ github.event_path }}"
