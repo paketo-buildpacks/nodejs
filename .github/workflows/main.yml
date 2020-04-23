@@ -12,9 +12,14 @@
 #     - name: Get the output time
 #       run: echo "The time was ${{ steps.hello.outputs.time }}"
 
+# on:
+#   release:
+#     types: [published]
+
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+    - master
 
 jobs:
   dispatch:
