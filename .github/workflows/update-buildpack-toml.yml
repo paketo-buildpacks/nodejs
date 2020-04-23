@@ -1,6 +1,6 @@
 on:
   repository_dispatch:
-    types: [update-buildpack-toml]
+    types: update-buildpack-toml
 
 jobs:
   update-buildpack-toml:
