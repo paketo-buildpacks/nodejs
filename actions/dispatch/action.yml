@@ -1,5 +1,17 @@
 name: 'Dispatch'
 description: 'Send a dispatch event'
+inputs:
+  repo:
+    description: 'Repository that should receive the dispatch event'
+    required: true
+  token:
+    description: 'Github Access Token used to make the request'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+  - "--repo"
+  - ${{ inputs.repo }}
+  - "--token"
+  - ${{ inputs.token }}

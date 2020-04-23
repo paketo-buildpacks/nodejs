@@ -10,4 +10,5 @@ jobs:
     - name: Send Dispatch Event
       uses: thitch97/nodejs/actions/dispatch@master
       with:
-        event_path: "${{ github.event_path }}"
+        repo: thitch97/nodejs
+        token: ${{ github.token }}
