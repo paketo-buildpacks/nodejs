@@ -11,4 +11,4 @@ jobs:
       uses: thitch97/nodejs/actions/dispatch@master
       with:
         repo: thitch97/nodejs
-        token: ${{ github.token }}
+        token: ${{ secrets.token }}
