@@ -1,11 +1,5 @@
 name: 'Dispatch'
 description: 'Send a dispatch event'
-inputs:
-  event_path:  # id of input
-    description: 'Path to the event webhook payload on the runner'
-    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.event_path }}

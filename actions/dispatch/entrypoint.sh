@@ -3,7 +3,5 @@
 echo "==="
 env
 echo "==="
-echo "${1}"
-echo "==="
-cat "${1}"
+cat "${GITHUB_EVENT_PATH}"
 echo "==="
