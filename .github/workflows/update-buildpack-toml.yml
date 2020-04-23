@@ -1,0 +1,11 @@
+on:
+  repository_dispatch:
+    types: [update-buildpack-toml]
+
+jobs:
+  update-buildpack-toml:
+    runs-on: ubuntu-latest
+    name: Update buildpack.toml
+    steps:
+    - name: Print Dispatch Event
+      run: "cat ${{ github.event_path }}"
