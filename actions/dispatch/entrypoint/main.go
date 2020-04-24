@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"io/ioutil"
 	"net/http"
 	"net/http/httputil"
 	"os"
@@ -23,6 +24,12 @@ func main() {
 	flag.StringVar(&config.Repo, "repo", "", "Specifies repo for sending dispatch request")
 	flag.StringVar(&config.Token, "token", "", "Github Authorization Token")
 	flag.Parse()
+
+	webhook, err := ioutil.ReadFile(os.Getenv("GITHUB_EVENT_PATH"))
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("webhook -> \n%s\n", webhook)
 
 	file, err := os.Open(os.Getenv("GITHUB_EVENT_PATH"))
 	if err != nil {
@@ -67,9 +74,6 @@ func main() {
 		fail(fmt.Errorf("failed to create dispatch request: %w", err))
 	}
 
-	dump, _ := httputil.DumpRequestOut(req, true)
-	fmt.Printf("request ->\n%s\n", dump)
-
 	req.Header.Set("Authorization", fmt.Sprintf("token %s", config.Token))
 
 	resp, err := http.DefaultClient.Do(req)
@@ -77,10 +81,8 @@ func main() {
 		fail(fmt.Errorf("failed to complete dispatch request: %w", err))
 	}
 
-	dump, _ = httputil.DumpResponse(resp, true)
-	fmt.Printf("response ->\n%s\n", dump)
-
 	if resp.StatusCode != http.StatusNoContent {
+		dump, _ := httputil.DumpResponse(resp, true)
 		fail(fmt.Errorf("Error: unexpected response from dispatch request: %s", dump))
 	}
 
