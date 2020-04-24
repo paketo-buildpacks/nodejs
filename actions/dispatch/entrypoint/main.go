@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"net/http"
 	"net/http/httputil"
 	"os"
@@ -41,7 +40,10 @@ func main() {
 			FullName string `json:"full_name"`
 		} `json:"repository"`
 		Release struct {
-			Name string `json:"name"`
+			TagName string `json:"tag_name"`
+			Assets  []struct {
+				BrowserDownloadURL string `json:"browser_download_url"`
+			} `json:"assets"`
 		} `json:"release"`
 	}
 	err = json.NewDecoder(file).Decode(&event)
@@ -50,19 +52,19 @@ func main() {
 	}
 
 	fmt.Printf("Repository: %s\n", event.Repository.FullName)
-	fmt.Printf("Release: %s\n", event.Release.Name)
+	fmt.Printf("Tag: %s\n", event.Release.TagName)
 
 	var dispatch struct {
 		EventType     string `json:"event_type"`
 		ClientPayload struct {
-			Repo    string `json:"repo"`
-			Release string `json:"release"`
+			Source string `json:"source"`
+			URI    string `json:"uri"`
 		} `json:"client_payload"`
 	}
 
 	dispatch.EventType = "update-buildpack-toml"
-	dispatch.ClientPayload.Repo = event.Repository.FullName
-	dispatch.ClientPayload.Release = event.Release.Name
+	dispatch.ClientPayload.Source = fmt.Sprintf("https://github.com/%s/archive/%s.tar.gz", event.Repository.FullName, event.Release.TagName)
+	dispatch.ClientPayload.URI = event.Release.Assets[0].BrowserDownloadURL
 
 	payloadData, err := json.Marshal(&dispatch)
 	if err != nil {

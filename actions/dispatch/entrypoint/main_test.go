@@ -39,11 +39,16 @@ func testSendDispatch(t *testing.T, context spec.G, it spec.S) {
 			Expect(err).NotTo(HaveOccurred())
 
 			_, err = file.WriteString(`{
+				"release": {
+					"assets": [
+						{
+							"browser_download_url": "https://example.com/some-asset.tgz"
+						}
+					],
+					"tag_name": "some-tag-name"
+				},
 				"repository": {
 					"full_name": "thitch97/nodejs"
-				},
-				"release": {
-					"name": "Release v1.2.3"
 				}
 			}`)
 			Expect(err).NotTo(HaveOccurred())
@@ -104,7 +109,7 @@ func testSendDispatch(t *testing.T, context spec.G, it spec.S) {
 
 			Expect(buffer).To(gbytes.Say(`Dispatching`))
 			Expect(buffer).To(gbytes.Say(`Repository: thitch97/nodejs`))
-			Expect(buffer).To(gbytes.Say(`Release: Release v1.2.3`))
+			Expect(buffer).To(gbytes.Say(`Tag: some-tag-name`))
 			Expect(buffer).To(gbytes.Say(`Success!`))
 
 			Expect(requests).To(HaveLen(1))
@@ -118,8 +123,8 @@ func testSendDispatch(t *testing.T, context spec.G, it spec.S) {
 			Expect(string(body)).To(MatchJSON(`{
 				"event_type": "update-buildpack-toml",
 				"client_payload": {
-					"repo": "thitch97/nodejs",
-					"release": "Release v1.2.3"
+					"source": "https://github.com/thitch97/nodejs/archive/some-tag-name.tar.gz",
+					"uri": "https://example.com/some-asset.tgz"
 				}
 			}`))
 		})
