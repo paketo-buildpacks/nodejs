@@ -10,3 +10,5 @@ The buildpack supports building simple Node applications or applications which
 utilize either [NPM](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
 for managing their dependencies. Support for each of these package managers is
 mutually exclusive.
+
+THIS IS JUST A BRANCH THAT WE'RE USING TO COMPARE FOR WHATEVER'S SAKE
