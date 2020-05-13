@@ -4,6 +4,7 @@ api = "0.2"
   id = "paketo-buildpacks/nodejs"
   name = "Node.js Buildpack"
   version = "{{.Version}}"
+  homepage = "https://github.com/paketo-buildpacks/nodejs"
 
 [metadata]
   include_files = ["buildpack.toml"]
