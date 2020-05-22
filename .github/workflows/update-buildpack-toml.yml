@@ -25,7 +25,7 @@ jobs:
           -b "dependency-update/${{ steps.dependency.outputs.id }}/${{ steps.dependency.outputs.version }}"
 
     - name: Update buildpack.toml
-      uses: paketo-buildpacks/github-config/actions/dependency/update@receive-dependency-update
+      uses: paketo-buildpacks/github-config/actions/dependency/update@master
 
     - name: Commit
       run: |
@@ -37,8 +37,11 @@ jobs:
 
     - name: Push Branch
       run: |
-        git push \
-          --set-upstream origin "dependency-update/${{ steps.dependency.outputs.id }}/${{ steps.dependency.outputs.version }}"
+        git remote add origin-ssh "git@github.com:${{ github.repository }}.git"
+        eval "$(ssh-agent)"
+        echo "${{ secrets.PAKETO_BOT_SSH_KEY }}" | ssh-add -
+        GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git \
+          push origin "dependency-update/${{ steps.dependency.outputs.id }}/${{ steps.dependency.outputs.version }}"
 
     - name: Open Pull Request
       run: |
