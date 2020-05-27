@@ -1,22 +1,22 @@
 api = "0.2"
 
 [buildpack]
+  homepage = "https://github.com/paketo-buildpacks/nodejs"
   id = "paketo-buildpacks/nodejs"
   name = "Node.js Buildpack"
   version = "{{.Version}}"
-  homepage = "https://github.com/paketo-buildpacks/nodejs"
 
 [metadata]
   include_files = ["buildpack.toml"]
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/node-engine"
-    sha256 = "ae92b009fb167ed56cf19e5050480606ca7e17dda977e73225f4d1e43d03956e"
-    source = "https://github.com/cloudfoundry/node-engine-cnb/archive/v0.0.178.tar.gz"
-    source_sha256 = "9b6f8dd2f03d5ee704605bbca4503d973d08a7ed236712c66de5c7a71867af46"
-    stacks = ["io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3"]
-    uri = "https://buildpacks.cloudfoundry.org/dependencies/org.cloudfoundry.node-engine/org.cloudfoundry.node-engine_0.0.178_linux_noarch_any-stack_ae92b009.tgz"
-    version = "0.0.178"
+    sha256 = "cab3a1172c4cdf1fe7e3647568657ab56de51d3074ee3941393de9db25dc24b4"
+    source = "https://github.com/paketo-buildpacks/node-engine/archive/v0.0.209.tar.gz"
+    source_sha256 = "74e37e925a8b44f4376dcb11daed6e766488fc6a4084e66bc82572fddb8f2bc4"
+    stacks = ["org.cloudfoundry.stacks.cflinuxfs3", "io.buildpacks.stacks.bionic"]
+    uri = "https://github.com/paketo-buildpacks/node-engine/releases/download/v0.0.209/node-engine-0.0.209.tgz"
+    version = "0.0.209"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/npm"
@@ -40,7 +40,7 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "0.0.178"
+    version = "0.0.209"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-install"
@@ -50,7 +50,7 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "0.0.178"
+    version = "0.0.209"
 
   [[order.group]]
     id = "paketo-buildpacks/npm"
