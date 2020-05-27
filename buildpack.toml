@@ -1,10 +1,10 @@
 api = "0.2"
 
 [buildpack]
+  homepage = "https://github.com/paketo-buildpacks/nodejs"
   id = "paketo-buildpacks/nodejs"
   name = "Node.js Buildpack"
   version = "{{.Version}}"
-  homepage = "https://github.com/paketo-buildpacks/nodejs"
 
 [metadata]
   include_files = ["buildpack.toml"]
@@ -29,12 +29,12 @@ api = "0.2"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/yarn-install"
-    sha256 = "8ef46e74d1c398fee2e144f73c39a19981f337e50baf1510ff608f69ec413fb6"
-    source = "https://github.com/cloudfoundry/yarn-install-cnb/archive/v0.1.19.tar.gz"
-    source_sha256 = "79bb1d7d972748bd8a96889adb4833c4b8fe8f842c8d6f8279a659e5c231bffd"
-    stacks = ["io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3"]
-    uri = "https://buildpacks.cloudfoundry.org/dependencies/org.cloudfoundry.yarn-install/org.cloudfoundry.yarn-install_0.1.19_linux_noarch_any-stack_8ef46e74.tgz"
-    version = "0.1.19"
+    sha256 = "ee259e6a920ae55f1ed8ac97dc535fdadbeaff3fa5620b86e3acfbbde2a28c4b"
+    source = "https://github.com/paketo-buildpacks/yarn-install/archive/v0.1.43.tar.gz"
+    source_sha256 = "fbb19fefb3a1e3b49ac856718b383f3e73630202501d430a684bdcead9d3aeed"
+    stacks = ["org.cloudfoundry.stacks.cflinuxfs3", "io.buildpacks.stacks.bionic"]
+    uri = "https://github.com/paketo-buildpacks/yarn-install/releases/download/v0.1.43/yarn-install-0.1.43.tgz"
+    version = "0.1.43"
 
 [[order]]
 
@@ -44,7 +44,7 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-install"
-    version = "0.1.19"
+    version = "0.1.43"
 
 [[order]]
 
