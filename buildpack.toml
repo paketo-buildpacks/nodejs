@@ -20,12 +20,12 @@ api = "0.2"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/npm"
-    sha256 = "708e91ddf03c4015ef007a4cd2dae0d43feeb1f75ea50cfad8c2a0a4ace505bd"
-    source = "https://github.com/paketo-buildpacks/npm/archive/v0.1.33.tar.gz"
-    source_sha256 = "219905edb02c473f9632ba504a76e1342816b8cc8c3ff26ee9be5db86fc7adce"
+    sha256 = "06f691f5b0fb91bcfc500da775c4eaf50a58a7c003373bceb6bcfc6a02569fd2"
+    source = "https://github.com/paketo-buildpacks/npm/archive/v0.1.35.tar.gz"
+    source_sha256 = "e06d25d8675b53eadd0a869850d1c4a3f068fd807a999101c250330d33496438"
     stacks = ["org.cloudfoundry.stacks.cflinuxfs3", "io.buildpacks.stacks.bionic"]
-    uri = "https://github.com/paketo-buildpacks/npm/releases/download/v0.1.33/npm-0.1.33.tgz"
-    version = "0.1.33"
+    uri = "https://github.com/paketo-buildpacks/npm/releases/download/v0.1.35/npm-0.1.35.tgz"
+    version = "0.1.35"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/yarn-install"
@@ -54,4 +54,4 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/npm"
-    version = "0.1.33"
+    version = "0.1.35"
