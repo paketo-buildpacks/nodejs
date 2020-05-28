@@ -20,21 +20,21 @@ api = "0.2"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/npm"
-    sha256 = "5118b04d8cd5400dde51e2377cccc52731c5e2cf8dcb63ce3446b1de5108eb61"
-    source = "https://github.com/paketo-buildpacks/npm/archive/v0.1.34.tar.gz"
-    source_sha256 = "8ee74feabf80c5653def8971c0349a1335c2ff26fccb2bc65e9ef8db54b992ec"
+    sha256 = "06f691f5b0fb91bcfc500da775c4eaf50a58a7c003373bceb6bcfc6a02569fd2"
+    source = "https://github.com/paketo-buildpacks/npm/archive/v0.1.35.tar.gz"
+    source_sha256 = "e06d25d8675b53eadd0a869850d1c4a3f068fd807a999101c250330d33496438"
     stacks = ["org.cloudfoundry.stacks.cflinuxfs3", "io.buildpacks.stacks.bionic"]
-    uri = "https://github.com/paketo-buildpacks/npm/releases/download/v0.1.34/npm-0.1.34.tgz"
-    version = "0.1.34"
+    uri = "https://github.com/paketo-buildpacks/npm/releases/download/v0.1.35/npm-0.1.35.tgz"
+    version = "0.1.35"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/yarn-install"
-    sha256 = "1a3244360a2b991d07906fd22e04c04a94b76ac88a8ff240c0a153a2cbc99d30"
-    source = "https://github.com/paketo-buildpacks/yarn-install/archive/v0.1.44.tar.gz"
-    source_sha256 = "3bd0e3bdfbef80e8a8671cb023cce3a66e0e370032d0f2bf60eb3c70460df37d"
+    sha256 = "1c83cb21aac277cbf87f6025892020c78151662acc26e479f1c4641a3fb2e294"
+    source = "https://github.com/paketo-buildpacks/yarn-install/archive/v0.1.45.tar.gz"
+    source_sha256 = "84af6d748c03eb33c8b642725121fab113496756adeb6a2e6074448066357811"
     stacks = ["org.cloudfoundry.stacks.cflinuxfs3", "io.buildpacks.stacks.bionic"]
-    uri = "https://github.com/paketo-buildpacks/yarn-install/releases/download/v0.1.44/yarn-install-0.1.44.tgz"
-    version = "0.1.44"
+    uri = "https://github.com/paketo-buildpacks/yarn-install/releases/download/v0.1.45/yarn-install-0.1.45.tgz"
+    version = "0.1.45"
 
 [[order]]
 
@@ -44,7 +44,7 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-install"
-    version = "0.1.44"
+    version = "0.1.45"
 
 [[order]]
 
@@ -54,4 +54,4 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/npm"
-    version = "0.1.34"
+    version = "0.1.35"
