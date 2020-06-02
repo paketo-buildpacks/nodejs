@@ -29,12 +29,12 @@ api = "0.2"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/yarn-install"
-    sha256 = "e7285e774155c584ce8c38d3671abf49873f335bbe2b81ae09806b6c1d2f06dd"
-    source = "https://github.com/paketo-buildpacks/yarn-install/archive/v0.1.47.tar.gz"
-    source_sha256 = "aa857218d9a4ded8b1d5edd2c9aab48ed9078623ecdd6265263cb3f7cad075d7"
+    sha256 = "c46238e9ec8f179cbdf299b001072681b06dc456fac959ebac6e19133e3376f5"
+    source = "https://github.com/paketo-buildpacks/yarn-install/archive/v0.1.48.tar.gz"
+    source_sha256 = "a70bbfae731be4ffbc8b35336102cb0f6f4fb2800d4b4da07bf181518bad67bc"
     stacks = ["org.cloudfoundry.stacks.cflinuxfs3", "io.buildpacks.stacks.bionic"]
-    uri = "https://github.com/paketo-buildpacks/yarn-install/releases/download/v0.1.47/yarn-install-0.1.47.tgz"
-    version = "0.1.47"
+    uri = "https://github.com/paketo-buildpacks/yarn-install/releases/download/v0.1.48/yarn-install-0.1.48.tgz"
+    version = "0.1.48"
 
 [[order]]
 
@@ -44,7 +44,7 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-install"
-    version = "0.1.47"
+    version = "0.1.48"
 
 [[order]]
 
