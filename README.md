@@ -1,7 +1,9 @@
-# NodeJS Cloud Native Buildpack
+# Node.js Paketo Buildpack
 
-The NodeJS Cloud Native Buildpack provides a set of collaborating buildpacks that
-enable the building of a NodeJS-based application. These buildpacks include:
+## `gcr.io/paketo-buildpacks/nodejs`
+
+The Node.js Paketo Buildpack provides a set of collaborating buildpacks that
+enable the building of a Node.js-based application. These buildpacks include:
 - [Node Engine CNB](https://github.com/paketo-buildpacks/node-engine)
 - [Yarn Install CNB](https://github.com/paketo-buildpacks/yarn-install)
 - [NPM CNB](https://github.com/paketo-buildpacks/npm)
