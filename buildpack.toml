@@ -11,10 +11,10 @@ api = "0.2"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/node-engine"
-    sha256 = "ab1c7e3be23245f3550d5b9c376407dc0f53f43b846ebcb438547dd794bb48f7"
+    sha256 = "7cc557d567de1a144976112edd458efcb0c8c8d3b62f93f49eb31db3032be286"
     source = "https://github.com/paketo-buildpacks/node-engine/archive/v0.0.210.tar.gz"
-    source_sha256 = "8e0528307e60f36808219eba367afb235406fcb6be07c57b85dc8d94673e0d53"
-    stacks = ["org.cloudfoundry.stacks.cflinuxfs3", "io.buildpacks.stacks.bionic"]
+    source_sha256 = "045b74d08cd789140c25675e1f4c7868816373c3329ceae268f587eb4f303398"
+    stacks = ["io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3"]
     uri = "https://github.com/paketo-buildpacks/node-engine/releases/download/v0.0.210/node-engine-0.0.210.tgz"
     version = "0.0.210"
 
