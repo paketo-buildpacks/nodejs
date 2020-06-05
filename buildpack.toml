@@ -11,12 +11,12 @@ api = "0.2"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/node-engine"
-    sha256 = "27675032591f48d242d557e81cc7b397615ab54db05fa36bfc53884c67160a09"
-    source = "https://github.com/paketo-buildpacks/node-engine/archive/v0.0.211.tar.gz"
-    source_sha256 = "c2a73abeb1b2a2ca7ba970d0a9426c272e1fe66f40ca41fcc120cc5d64fd4b01"
+    sha256 = "1397772d21778fcd52ecc4597ce543276ea18c8c0fac721ada194ca4359a5f79"
+    source = "https://github.com/paketo-buildpacks/node-engine/archive/v0.0.213.tar.gz"
+    source_sha256 = "144666420eb493e9b74febb7bffd938a18475787d7b1107c519f12effc769868"
     stacks = ["io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3"]
-    uri = "https://github.com/paketo-buildpacks/node-engine/releases/download/v0.0.211/node-engine-0.0.211.tgz"
-    version = "0.0.211"
+    uri = "https://github.com/paketo-buildpacks/node-engine/releases/download/v0.0.213/node-engine-0.0.213.tgz"
+    version = "0.0.213"
 
   [[metadata.dependencies]]
     id = "paketo-buildpacks/npm"
@@ -40,7 +40,7 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "0.0.211"
+    version = "0.0.213"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-install"
@@ -50,7 +50,7 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "0.0.211"
+    version = "0.0.213"
 
   [[order.group]]
     id = "paketo-buildpacks/npm"
