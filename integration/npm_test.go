@@ -50,7 +50,8 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 
 		it("builds a working OCI image for a simple app", func() {
 			var err error
-			image, _, err = pack.Build.
+			var logs fmt.Stringer
+			image, logs, err = pack.WithNoColor().Build.
 				WithBuildpacks(nodeBuildpack).
 				WithNoPull().
 				Execute(name, filepath.Join("testdata", "npm"))
@@ -72,6 +73,9 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 			Expect(json.NewDecoder(response.Body).Decode(&env)).To(Succeed())
 			Expect(env.NpmConfigLoglevel).To(Equal("error"))
 			Expect(env.NpmConfigProduction).To(Equal("true"))
+
+			Expect(logs).To(ContainLines(ContainSubstring("Node Engine Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("NPM Buildpack")))
 		})
 	})
 }
