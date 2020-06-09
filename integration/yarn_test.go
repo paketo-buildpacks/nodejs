@@ -56,6 +56,9 @@ func testYarn(t *testing.T, context spec.G, it spec.S) {
 				Execute(name, filepath.Join("testdata", "yarn"))
 			Expect(err).NotTo(HaveOccurred())
 
+			Expect(logs).To(ContainLines(ContainSubstring("Node Engine Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Yarn Install Buildpack")))
+
 			container, err = docker.Container.Run.Execute(image.ID)
 			Expect(err).NotTo(HaveOccurred())
 
@@ -65,8 +68,6 @@ func testYarn(t *testing.T, context spec.G, it spec.S) {
 			Expect(err).NotTo(HaveOccurred())
 			Expect(response.StatusCode).To(Equal(http.StatusOK))
 
-			Expect(logs).To(ContainLines(ContainSubstring("Node Engine Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("Yarn Install Buildpack")))
 		})
 	})
 }

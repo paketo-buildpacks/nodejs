@@ -57,6 +57,9 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 				Execute(name, filepath.Join("testdata", "npm"))
 			Expect(err).NotTo(HaveOccurred())
 
+			Expect(logs).To(ContainLines(ContainSubstring("Node Engine Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("NPM Buildpack")))
+
 			container, err = docker.Container.Run.Execute(image.ID)
 			Expect(err).NotTo(HaveOccurred())
 
@@ -74,8 +77,6 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 			Expect(env.NpmConfigLoglevel).To(Equal("error"))
 			Expect(env.NpmConfigProduction).To(Equal("true"))
 
-			Expect(logs).To(ContainLines(ContainSubstring("Node Engine Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("NPM Buildpack")))
 		})
 	})
 }
