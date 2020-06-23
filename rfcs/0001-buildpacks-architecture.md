@@ -32,7 +32,7 @@ Further, this structure makes it difficult to address complex issues like
 
 ## Proposal
 
-Have 9 implementation CNBs:
+Have 8 implementation CNBs:
 
 - node-engine:
   - Provides `node` and `npm` (npm is the default package manager
@@ -61,17 +61,17 @@ Have 9 implementation CNBs:
 
 
 - npm-start: sets up a start command that uses `tini` and `npm`
-  - Requires {`node`, `npm`, `node_modules`, `tini`} during `launch`
   - Provides none
+  - Requires {`node`, `npm`, `node_modules`, `tini`} during `launch`
   - Example start command would be `tini -g -- npm start`
 
 - yarn-start: sets up a start command that uses `tini` and `yarn`
-  - Requires {`node`, `yarn`, `node_modules`, `tini`} during `launch`
   - Provides none
+  - Requires {`node`, `yarn`, `node_modules`, `tini`} during `launch`
 
 - node-start: sets up a start command that uses `tini` and `node`
-  - Requires {`node`, `tini`} during `launch`
   - Provides none
+  - Requires {`node`, `tini`} during `launch`
   - Example start command would be `tini -g -- node server.js`
 
 The above implementation buildpacks should be structured as follows in the nodejs language family buildpack.
