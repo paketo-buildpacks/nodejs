@@ -2,24 +2,24 @@
 
 ## Summary
 
-This document describes what implementation cnbs must exist, what their
-function should be and how they should appear in the meta cnb order.
+This document describes what implementation CNB must exist, what their
+function should be and how they should appear in the meta CNB order.
 
 ## Motivation
 
 It looks like in the current state of the world, we have:
 
-- a [node-engine](github.com/paketo-buildpacks/node-engine) cnb that provides
+- a [node-engine](github.com/paketo-buildpacks/node-engine) CNB that provides
   `node` and `npm` on PATH.
 
-- an [npm](github.com/paketo-buildpacks/npm) cnb that does all of these
+- an [npm](github.com/paketo-buildpacks/npm) CNB that does all of these
   functions - install dependencies in the local `node_modules` folder, and sets
   a start command using `npm start`.
 
-- a [yarn-install](github.com/paketo-buildpacks/yarn-install) cnb that does all
+- a [yarn-install](github.com/paketo-buildpacks/yarn-install) CNB that does all
   of these functions - provide the yarn executable on PATH, install
   dependencies in the local `node_modules` folder, and sets a start command using
-  `npm start`. The cnb is poorly named due to historical reasons
+  `npm start`. The CNB is poorly named due to historical reasons
 
 This above architecture does not go well with the implementation CNB philosophy
 of "ask for your requirements at each stage, do one thing, and do it well".
@@ -32,25 +32,47 @@ Further, this structure makes it difficult to address complex issues like
 
 ## Proposal
 
-Have 6 implementation CNBS:
+Have 9 implementation CNBs:
 
-- node-engine: provides `node` and `npm` (npm is the default package manager
+- node-engine:
+  - Provides `node` and `npm` (npm is the default package manager
   that comes together with node) executable on PATH
   - Requires none.
 
 - npm-install: installs dependencies to `node_modules` and provides them.
+  - Provides `node_modules`
   - Requires `node` during `build`
 
 - yarn: provides `yarn` executable on PATH.
+  - Provides `yarn`
   - Requires none.
 
 - yarn-install: installs dependencies to `node_modules` and provides them.
-  - Requires `node` and `yarn` during `build`
+  - Provides `node_modules`
+  - Requires {`node`, `yarn`} during `build`
 
-- node-run: smart enough to come up with an appropriate start command to run
-  either an npm app or yarn app or a vanilla node app. See Note [1].
-  - Requires one of {node+yarn-install, node+npm-install, node} during `launch`
+- tini: provides the [tini](https://github.com/krallin/tini) process manager,
+  which will be used in our start commands. This is needed to allow signals to
+  be passed to the node process spawned by the following start command CNBs
+  npm-start and yarn-start
+  - Provides `tini`
+  - Requires none.
+  See [issue #37](https://github.com/paketo-buildpacks/nodejs/issues/37) for motivation.
 
+
+- npm-start: sets up a start command that uses `tini` and `npm`
+  - Requires {`node`, `npm`, `node_modules`, `tini`} during `launch`
+  - Provides none
+  - Example start command would be `tini -g -- npm start`
+
+- yarn-start: sets up a start command that uses `tini` and `yarn`
+  - Requires {`node`, `yarn`, `node_modules`, `tini`} during `launch`
+  - Provides none
+
+- node-start: sets up a start command that uses `tini` and `node`
+  - Requires {`node`, `tini`} during `launch`
+  - Provides none
+  - Example start command would be `tini -g -- node server.js`
 
 The above implementation buildpacks should be structured as follows in the nodejs language family buildpack.
 
@@ -70,7 +92,11 @@ The above implementation buildpacks should be structured as follows in the nodej
     version = ""
 
   [[order.group]]
-    id = "paketo-buildpacks/node-run"
+    id = "paketo-buildpacks/tini"
+    version = ""
+
+  [[order.group]]
+    id = "paketo-buildpacks/yarn-start"
     version = ""
 
 [[order]]
@@ -84,7 +110,11 @@ The above implementation buildpacks should be structured as follows in the nodej
     version = ""
 
   [[order.group]]
-    id = "paketo-buildpacks/node-run"
+    id = "paketo-buildpacks/tini"
+    version = ""
+
+  [[order.group]]
+    id = "paketo-buildpacks/npm-start"
     version = ""
 
 
@@ -98,12 +128,3 @@ The above implementation buildpacks should be structured as follows in the nodej
     id = "paketo-buildpacks/node-run"
     version = ""
 ```
-
-## Notes
-
-[1] This start command will not be either `npm start` or `yarn run/start` and
-should construct a start command like "node [...]". This is because both `npm
-start` and `yarn run` automatically shell out to node which creates problems
-seen in [issue #37](https://github.com/paketo-buildpacks/nodejs/issues/37).
-These commands do not seem very conducive for running production apps inside
-docker containers.
