@@ -71,8 +71,8 @@ Have 8 implementation CNBs:
 
 - node-start: sets up a start command that uses `tini` and `node`
   - Provides none
-  - Requires {`node`, `tini`} during `launch`
-  - Example start command would be `tini -g -- node server.js`
+  - Requires {`node`} during `launch`
+  - Example start command would be `node server.js`
 
 The above implementation buildpacks should be structured as follows in the nodejs language family buildpack.
 
@@ -81,50 +81,38 @@ The above implementation buildpacks should be structured as follows in the nodej
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = ""
 
   [[order.group]]
     id = "paketo-buildpacks/yarn"
-    version = ""
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-install"
-    version = ""
 
   [[order.group]]
     id = "paketo-buildpacks/tini"
-    version = ""
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-start"
-    version = ""
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = ""
 
   [[order.group]]
     id = "paketo-buildpacks/npm-install"
-    version = ""
 
   [[order.group]]
     id = "paketo-buildpacks/tini"
-    version = ""
 
   [[order.group]]
     id = "paketo-buildpacks/npm-start"
-    version = ""
-
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = ""
 
   [[order.group]]
-    id = "paketo-buildpacks/node-run"
-    version = ""
+    id = "paketo-buildpacks/node-start"
 ```
