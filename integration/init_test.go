@@ -6,7 +6,6 @@ import (
 	"testing"
 	"time"
 
-	"github.com/paketo-buildpacks/occam"
 	"github.com/paketo-buildpacks/packit/pexec"
 	"github.com/sclevine/spec"
 	"github.com/sclevine/spec/report"
@@ -37,13 +36,4 @@ func TestIntegration(t *testing.T) {
 	suite("NPM", testNPM)
 	suite("Yarn", testYarn)
 	suite.Run(t)
-}
-
-func ContainerLogs(id string) func() string {
-	docker := occam.NewDocker()
-
-	return func() string {
-		logs, _ := docker.Container.Logs.Execute(id)
-		return logs.String()
-	}
 }
