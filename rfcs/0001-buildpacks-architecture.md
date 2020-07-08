@@ -69,7 +69,7 @@ Have 8 implementation CNBs:
   - Provides none
   - Requires {`node`, `yarn`, `node_modules`, `tini`} during `launch`
 
-- node-start: sets up a start command that uses `tini` and `node`
+- node-start: sets up a start command that uses `node`
   - Provides none
   - Requires {`node`} during `launch`
   - Example start command would be `node server.js`
