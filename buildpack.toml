@@ -9,49 +9,22 @@ api = "0.2"
 [metadata]
   include_files = ["buildpack.toml"]
 
-  [[metadata.dependencies]]
+[[order]]
+
+  [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    sha256 = "497d6e4c50f429d8d3acd0e644e0143204c3143a7c8822fc9b492ab32bb0d737"
-    source = "https://github.com/paketo-buildpacks/node-engine/archive/v0.0.234.tar.gz"
-    source_sha256 = "0e8e363dc40ae1055690fdfe2eff0d22fa7d6486f9bfa6d1dac9914ac34f2ef6"
-    stacks = ["io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3"]
-    uri = "https://github.com/paketo-buildpacks/node-engine/releases/download/v0.0.234/node-engine-0.0.234.tgz"
-    version = "0.0.234"
+    version = "0.0.237"
 
-  [[metadata.dependencies]]
-    id = "paketo-buildpacks/npm"
-    sha256 = "4c3a2ec43f6ba351222627a5d503c524fb032126db9dae6140b1228c66bd5346"
-    source = "https://github.com/paketo-buildpacks/npm/archive/v0.1.58.tar.gz"
-    source_sha256 = "6d1b0433be9a78339b013e06c7ea575758a7be5d25bcb531c5b3ffae84e1ba3a"
-    stacks = ["org.cloudfoundry.stacks.cflinuxfs3", "io.buildpacks.stacks.bionic"]
-    uri = "https://github.com/paketo-buildpacks/npm/releases/download/v0.1.58/npm-0.1.58.tgz"
-    version = "0.1.58"
-
-  [[metadata.dependencies]]
+  [[order.group]]
     id = "paketo-buildpacks/yarn-install"
-    sha256 = "a14b6dee25e7e1346ba9ffd2e75043ac85ba65233d3ab3738ab120555a62fc59"
-    source = "https://github.com/paketo-buildpacks/yarn-install/archive/v0.1.66.tar.gz"
-    source_sha256 = "dc7f74407390fcbf20e621a076f88d844a1602d513e739cefbe4bd48429a6d01"
-    stacks = ["org.cloudfoundry.stacks.cflinuxfs3", "io.buildpacks.stacks.bionic"]
-    uri = "https://github.com/paketo-buildpacks/yarn-install/releases/download/v0.1.66/yarn-install-0.1.66.tgz"
-    version = "0.1.66"
+    version = "0.1.68"
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "0.0.234"
-
-  [[order.group]]
-    id = "paketo-buildpacks/yarn-install"
-    version = "0.1.66"
-
-[[order]]
-
-  [[order.group]]
-    id = "paketo-buildpacks/node-engine"
-    version = "0.0.234"
+    version = "0.0.237"
 
   [[order.group]]
     id = "paketo-buildpacks/npm"
-    version = "0.1.58"
+    version = "0.1.60"
