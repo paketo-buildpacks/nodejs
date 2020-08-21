@@ -2,13 +2,13 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  image = "gcr.io/paketo-buildpacks/node-engine:0.0.262"
+  image = "gcr.io/paketo-buildpacks/node-engine:0.1.0"
 
 [[dependencies]]
   image = "gcr.io/paketo-buildpacks/node-start:0.0.3"
 
 [[dependencies]]
-  image = "gcr.io/paketo-buildpacks/npm:0.1.80"
+  image = "gcr.io/paketo-buildpacks/npm:0.1.81"
 
 [[dependencies]]
-  image = "gcr.io/paketo-buildpacks/yarn-install:0.1.87"
+  image = "gcr.io/paketo-buildpacks/yarn-install:0.1.88"
