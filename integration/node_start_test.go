@@ -28,7 +28,7 @@ func testNodeStart(t *testing.T, context spec.G, it spec.S) {
 		docker = occam.NewDocker()
 	})
 
-	context.Focus("when building a node app that does not use a package manager", func() {
+	context("when building a node app that does not use a package manager", func() {
 		var (
 			image     occam.Image
 			container occam.Container
