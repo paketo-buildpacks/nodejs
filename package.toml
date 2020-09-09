@@ -11,4 +11,13 @@
   image = "gcr.io/paketo-buildpacks/npm:0.1.81"
 
 [[dependencies]]
-  image = "gcr.io/paketo-buildpacks/yarn-install:0.1.88"
+  image = "gcr.io/paketo-buildpacks/yarn-install:0.2.0"
+
+[[dependencies]]
+  image = "gcr.io/paketo-buildpacks/yarn:0.0.2"
+
+[[dependencies]]
+  image = "gcr.io/paketo-buildpacks/tini:0.0.2"
+
+[[dependencies]]
+  image = "gcr.io/paketo-buildpacks/yarn-start:0.0.1"
