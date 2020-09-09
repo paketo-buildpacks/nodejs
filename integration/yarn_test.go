@@ -57,7 +57,10 @@ func testYarn(t *testing.T, context spec.G, it spec.S) {
 			Expect(err).NotTo(HaveOccurred())
 
 			Expect(logs).To(ContainLines(ContainSubstring("Node Engine Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Yarn Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("Yarn Install Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Tini Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Yarn-Start Buildpack")))
 
 			container, err = docker.Container.Run.Execute(image.ID)
 			Expect(err).NotTo(HaveOccurred())
@@ -67,7 +70,6 @@ func testYarn(t *testing.T, context spec.G, it spec.S) {
 			response, err := http.Get(fmt.Sprintf("http://localhost:%s", container.HostPort()))
 			Expect(err).NotTo(HaveOccurred())
 			Expect(response.StatusCode).To(Equal(http.StatusOK))
-
 		})
 	})
 }
