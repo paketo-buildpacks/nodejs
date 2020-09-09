@@ -16,8 +16,20 @@ api = "0.2"
     version = "0.1.1"
 
   [[order.group]]
+    id = "paketo-buildpacks/yarn"
+    version = "0.0.2"
+
+  [[order.group]]
     id = "paketo-buildpacks/yarn-install"
-    version = "0.1.88"
+    version = "0.2.0"
+
+  [[order.group]]
+    id = "paketo-buildpacks/tini"
+    version = "0.0.2"
+
+  [[order.group]]
+    id = "paketo-buildpacks/yarn-start"
+    version = "0.0.1"
 
 [[order]]
 
