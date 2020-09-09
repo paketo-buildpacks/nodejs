@@ -5,7 +5,7 @@
   image = "gcr.io/paketo-buildpacks/node-engine:0.1.1"
 
 [[dependencies]]
-  image = "gcr.io/paketo-buildpacks/node-start:0.0.5"
+  image = "gcr.io/paketo-buildpacks/node-start:0.0.6"
 
 [[dependencies]]
   image = "gcr.io/paketo-buildpacks/npm:0.1.81"
