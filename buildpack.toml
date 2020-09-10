@@ -38,8 +38,16 @@ api = "0.2"
     version = "0.1.1"
 
   [[order.group]]
-    id = "paketo-buildpacks/npm"
-    version = "0.1.81"
+    id = "paketo-buildpacks/npm-install"
+    version = "0.2.0"
+
+  [[order.group]]
+    id = "paketo-buildpacks/tini"
+    version = "0.0.2"
+
+  [[order.group]]
+    id = "paketo-buildpacks/npm-start"
+    version = "0.0.1"
 
 [[order]]
 
