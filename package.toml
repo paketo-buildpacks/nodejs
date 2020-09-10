@@ -21,3 +21,6 @@
 
 [[dependencies]]
   image = "gcr.io/paketo-buildpacks/yarn-start:0.0.1"
+
+[[dependencies]]
+  image = "gcr.io/paketo-buildpacks/npm-install:0.2.0"
