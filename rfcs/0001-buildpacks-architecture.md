@@ -35,13 +35,13 @@ Further, this structure makes it difficult to address complex issues like
 Have 8 implementation CNBs:
 
 - node-engine:
-  - Provides `node` and `npm` (npm is the default package manager
+  - Provides `node` or {`node`, `npm`} (npm is the default package manager
   that comes together with node) executable on PATH
   - Requires none.
 
 - npm-install: installs dependencies to `node_modules` and provides them.
   - Provides `node_modules`
-  - Requires `node` during `build`
+  - Requires {`node`, `npm`} during `build`
 
 - yarn: provides `yarn` executable on PATH.
   - Provides `yarn`
@@ -116,3 +116,8 @@ The above implementation buildpacks should be structured as follows in the nodej
   [[order.group]]
     id = "paketo-buildpacks/node-start"
 ```
+
+**Revision History**
+
+* (09/09/2020) Edit: Fix npm-install's api - it was conceptualized to be the same as
+  that of yarn-install with npm in place of yarn.
