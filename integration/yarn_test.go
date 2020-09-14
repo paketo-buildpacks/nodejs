@@ -59,8 +59,7 @@ func testYarn(t *testing.T, context spec.G, it spec.S) {
 			Expect(logs).To(ContainLines(ContainSubstring("Node Engine Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("Yarn Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("Yarn Install Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("Tini Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("Yarn-Start Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Yarn Start Buildpack")))
 
 			container, err = docker.Container.Run.Execute(image.ID)
 			Expect(err).NotTo(HaveOccurred())
