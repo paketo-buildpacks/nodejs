@@ -59,8 +59,7 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 
 			Expect(logs).To(ContainLines(ContainSubstring("Node Engine Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("NPM Install Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("Tini Buildpack")))
-			Expect(logs).To(ContainLines(ContainSubstring("Npm Start Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("NPM Start Buildpack")))
 
 			container, err = docker.Container.Run.Execute(image.ID)
 			Expect(err).NotTo(HaveOccurred())
