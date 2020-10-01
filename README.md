@@ -13,3 +13,6 @@ The buildpack supports building/running simple Node applications or applications
 which utilize either [NPM](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
 for managing their dependencies. Support for each of these package managers is
 mutually exclusive.
+
+Usage examples can be found in the
+[`samples` repository under the `nodejs` directory](https://github.com/paketo-buildpacks/samples/tree/main/nodejs).
