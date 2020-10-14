@@ -53,7 +53,7 @@ func testNodeStart(t *testing.T, context spec.G, it spec.S) {
 			var logs fmt.Stringer
 			image, logs, err = pack.WithNoColor().Build.
 				WithBuildpacks(nodeBuildpack).
-				WithNoPull().
+				WithPullPolicy("never").
 				Execute(name, filepath.Join("testdata", "no_package_manager"))
 			Expect(err).NotTo(HaveOccurred())
 
