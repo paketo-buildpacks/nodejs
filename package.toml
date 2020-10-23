@@ -2,7 +2,7 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  image = "gcr.io/paketo-buildpacks/node-engine:0.1.2"
+  image = "gcr.io/paketo-buildpacks/node-engine:0.1.3"
 
 [[dependencies]]
   image = "gcr.io/paketo-buildpacks/node-start:0.0.6"
