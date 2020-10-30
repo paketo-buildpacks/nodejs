@@ -48,4 +48,4 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
-    version = "0.0.6"
+    version = "0.0.7"
