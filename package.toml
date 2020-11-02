@@ -20,4 +20,4 @@
   image = "gcr.io/paketo-buildpacks/yarn:0.0.2"
 
 [[dependencies]]
-  image = "gcr.io/paketo-buildpacks/yarn-start:0.0.2"
+  image = "gcr.io/paketo-buildpacks/yarn-start:0.0.3"
