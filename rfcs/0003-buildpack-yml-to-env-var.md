@@ -22,6 +22,8 @@ There are several reasons for making this switch.
 ## Implementation
 The proposed environment variables are as follows:
 
+### Existing configurations
+
 #### BP_NODE_VERSION
 ```shell
 $BP_NODE_VERSION="~10"
@@ -41,6 +43,8 @@ This will replace the following structure in `buildpack.yml`:
 nodejs:
   optimize-memory: true
 ```
+
+### Proposed additions
 
 #### BP_NODE_PROJECT_PATH
 ```shell
@@ -62,7 +66,7 @@ start command as as `node $BP_NODE_PROJECT_PATH/$BP_NODE_START_ENTRYPOINT`.
 
 There is no current `buildpack.yml` support for this.
 
-### Deprecation Strategy
+## Deprecation Strategy
 In order to facilitate a smooth transition from `buildpack.yml`, the buildpack
 should support both configuration options with environment variables taking
 priority or `buildpack.yml` until the 1.0 release of the buildpack. The
