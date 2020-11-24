@@ -55,15 +55,12 @@ built by nodejs buildpacks.
 
 There is no current `buildpack.yml` support for this.
 
-#### BP_NODE_START_ENTRYPOINT
+#### BP_ENTRYPOINT
 ```shell
-$BP_NODE_START_ENTRYPOINT=customserver.js
+$BP_ENTRYPOINT=./src/nodejs/customserver.js
 ```
 Only applicable when using the `node-start` buildpack. This sets the file to
-call as argument to node. When both `$BP_NODE_PROJECT_PATH` and
-`$BP_NODE_START_ENTRYPOINT` are set, the `node-start` buildpack will set the
-start command as as `node $BP_NODE_PROJECT_PATH/$BP_NODE_START_ENTRYPOINT`.
-
+call as argument to node.
 There is no current `buildpack.yml` support for this.
 
 ## Deprecation Strategy
