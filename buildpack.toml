@@ -34,7 +34,7 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-install"
-    version = "0.2.2"
+    version = "0.2.3"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-start"
