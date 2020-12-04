@@ -55,9 +55,9 @@ built by nodejs buildpacks.
 
 There is no current `buildpack.yml` support for this.
 
-#### BP_ENTRYPOINT
+#### BP_LAUNCHPOINT
 ```shell
-$BP_ENTRYPOINT=./src/nodejs/customserver.js
+$BP_LAUNCHPOINT=./src/nodejs/customserver.js
 ```
 Only applicable when using the `node-start` buildpack. This sets the file to
 call as argument to node.
