@@ -9,13 +9,13 @@
   uri = "docker://gcr.io/paketo-buildpacks/node-start:0.0.9"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/npm-install:0.2.3"
+  uri = "docker://gcr.io/paketo-buildpacks/npm-install:0.2.4"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/npm-start:0.0.3"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/yarn-install:0.2.1"
+  uri = "docker://gcr.io/paketo-buildpacks/yarn-install:0.2.2"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/yarn:0.1.1"
