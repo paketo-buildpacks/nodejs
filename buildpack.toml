@@ -12,11 +12,11 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "0.1.5"
+    version = "0.1.6"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn"
-    version = "0.1.1"
+    version = "0.1.2"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-install"
@@ -24,7 +24,7 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-start"
-    version = "0.0.3"
+    version = "0.0.4"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -35,11 +35,11 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "0.1.5"
+    version = "0.1.6"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-install"
-    version = "0.2.4"
+    version = "0.2.5"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-start"
@@ -54,11 +54,11 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "0.1.5"
+    version = "0.1.6"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
-    version = "0.0.9"
+    version = "0.0.10"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
