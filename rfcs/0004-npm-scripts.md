@@ -3,8 +3,9 @@
 ## Proposal
 
 Add support for users to provide [npm scripts](https://docs.npmjs.com/cli/v6/configuring-npm/package-json#scripts)
-to be executed at specific life cycle events, like before and after installing modules.
-Users will provide them via build-time environment variables as defined in this RFC.
+to be executed after installing modules. Users will provide them via a
+build-time environment variable and the execution will handled by a
+`node-run-script` buildpack.
 
 ## Motivation
 
@@ -49,85 +50,71 @@ commands by the buildpacks
 ([e.g.](https://github.com/paketo-buildpacks/yarn/issues/59)).
 
 ## Implementation
-The proposed environment variables are as follows:
 
-#### BP_NPM_PREINSTALL
+This RFC proposes a new `node-run-script` buildpack that runs the lifecycle
+events provided by the user via build-time environment variable
+`$BP_NODE_RUN_SCRIPTS`. The value of the variable should be a comma separated
+list of events listed in the app's `package.json`.
+
+e.g.
 ```shell
-$BP_NPM_PREINSTALL="build,custom-script"
-```
-A comma separated list of life cycle events listed in the app's `package.json`
-that the `npm-install` buildpack must execute **before** it installs modules
-using `npm`.
-
-#### BP_NPM_POSTINSTALL
-```shell
-$BP_NPM_POSTINSTALL="build,custom-script"
-```
-A comma separated list of life cycle events listed in the app's `package.json`
-that the `npm-install` buildpack must execute **after** it installs modules using `npm`.
-
-#### BP_YARN_PREINSTALL
-```shell
-$BP_YARN_PREINSTALL="build,custom-script"
-```
-A comma separated list of life cycle events listed in the app's `package.json`
-that the `yarn-install` buildpack must execute **before** it installs modules
-using `yarn`.
-
-#### BP_YARN_POSTINSTALL
-```shell
-$BP_YARN_POSTINSTALL="build,custom-script"
-```
-A comma separated list of life cycle events listed in the app's `package.json`
-that the `yarn-install` buildpack must execute **after** it installs modules
-using `yarn`.
-
-### Order of execution
-
-The life cycle events specified via environment variables is in addition to,
-and must not interfere with the life cycle operation order of `npm install` or
-other commands.
-
-In the following case:
-
-```
-# Build-time environment variables:
-$BP_NPM_PREINSTALL="env-preinstall-script"
-$BP_NPM_POSTINSTALL="env-postinstall-script"
-
-# package.json:
-{
-  "scripts" : {
-    "preinstall" : "packagejson-preinstall-script",
-    "install" : "packagejson-install-script",
-    "postinstall" : "packagejson-postinstall-script"
-    ...
-    ...
-  }
-}
+$BP_NODE_RUN_SCRIPTS="build,custom-script"
 ```
 
-The following must be the order of execution of events by the npm-install buildpack:
-```
-env-preinstall-script
-packagejson-preinstall-script
-packagejson-install-script
-packagejson-postinstall-script
-env-postinstall-script
-```
+From the contents of the app directory and the buildpack plan entries, the
+buildpack should pick the correct package manager (npm, yarn) to execute the
+script.
 
-The *env-&ast;-script*s should be explicitly executed by the buildpacks and the
-*packagejson-&ast;-script*s are implicitly executed as part of the buidpack's
-[npm-install process](https://docs.npmjs.com/cli/v6/using-npm/scripts#npm-install).
+The buildpack will figure in the Node.js language family buildpack order as
+follows:
+
+```
+[[order]]
+  [[order.group]]
+    id = "paketo-buildpacks/node-engine"
+
+  [[order.group]]
+    id = "paketo-buildpacks/yarn"
+
+  [[order.group]]
+    id = "paketo-buildpacks/yarn-install"
+
+  [[order.group]]
+    id = "paketo-buildpacks/node-run-script"
+    optional = true
+
+  [[order.group]]
+    id = "paketo-buildpacks/yarn-start"
+  ...
+
+[[order]]
+  [[order.group]]
+    id = "paketo-buildpacks/node-engine"
+
+  [[order.group]]
+    id = "paketo-buildpacks/npm-install"
+
+  [[order.group]]
+    id = "paketo-buildpacks/node-run-script"
+    optional = true
+
+  [[order.group]]
+    id = "paketo-buildpacks/npm-start"
+```
 
 ### Open questions
 
-1. Web framework examples mostly demonstrate cases where a `postinstall` event
+1. ~~Web framework examples mostly demonstrate cases where a `postinstall` event
    would be useful. What are some real world cases (if any) where `preinstall`
-   would be used?
+   would be used?~~ Just support running scripts after installing modules.
 
-1. Do NPM and Yarn need separate env variables or should they read the same set
-   of env vars (e.g. `$BP_NODE_{PRE,POST}INSTALL`)?
+1. ~~Do NPM and Yarn need separate env variables or should they read the same set
+   of env vars (e.g. `$BP_NODE_{PRE,POST}INSTALL`)?~~ Consolidate.
 
-1. Should the implementation be moved away from the `{npm,yarn}-install`
-   buildpacks to separate npm run-script buildpack(s)?
+1. ~~Should the implementation be moved away from the `{npm,yarn}-install`
+   buildpacks to separate npm run-script buildpack(s)?~~ Yes.
+
+## Logistics
+
+* A new buildpack repository named `node-run-script` should be created in the
+  `paketo-buildpacks` organization under the Node.js subteam.
