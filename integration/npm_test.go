@@ -84,12 +84,10 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 			Expect(response.StatusCode).To(Equal(http.StatusOK))
 
 			var env struct {
-				NpmConfigLoglevel   string `json:"NPM_CONFIG_LOGLEVEL"`
-				NpmConfigProduction string `json:"NPM_CONFIG_PRODUCTION"`
+				NpmConfigLoglevel string `json:"NPM_CONFIG_LOGLEVEL"`
 			}
 			Expect(json.NewDecoder(response.Body).Decode(&env)).To(Succeed())
 			Expect(env.NpmConfigLoglevel).To(Equal("error"))
-			Expect(env.NpmConfigProduction).To(Equal("true"))
 
 		})
 
@@ -136,12 +134,10 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 				Expect(response.StatusCode).To(Equal(http.StatusOK))
 
 				var env struct {
-					NpmConfigLoglevel   string `json:"NPM_CONFIG_LOGLEVEL"`
-					NpmConfigProduction string `json:"NPM_CONFIG_PRODUCTION"`
+					NpmConfigLoglevel string `json:"NPM_CONFIG_LOGLEVEL"`
 				}
 				Expect(json.NewDecoder(response.Body).Decode(&env)).To(Succeed())
 				Expect(env.NpmConfigLoglevel).To(Equal("error"))
-				Expect(env.NpmConfigProduction).To(Equal("true"))
 			})
 		})
 	})
