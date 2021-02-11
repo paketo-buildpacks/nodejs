@@ -29,7 +29,7 @@ func testYarn(t *testing.T, context spec.G, it spec.S) {
 		docker = occam.NewDocker()
 	})
 
-	context("when the node_modules are NOT vendored", func() {
+	context("when building a node app that uses yarn", func() {
 		var (
 			image     occam.Image
 			container occam.Container
@@ -68,6 +68,7 @@ func testYarn(t *testing.T, context spec.G, it spec.S) {
 			Expect(logs).To(ContainLines(ContainSubstring("Yarn Start Buildpack")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Procfile Buildpack")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Environment Variables Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Image Labels Buildpack")))
 
 			container, err = docker.Container.Run.
 				WithEnv(map[string]string{"PORT": "8080"}).
@@ -93,7 +94,10 @@ func testYarn(t *testing.T, context spec.G, it spec.S) {
 				image, logs, err = pack.WithNoColor().Build.
 					WithBuildpacks(nodeBuildpack).
 					WithPullPolicy("never").
-					WithEnv(map[string]string{"BPE_SOME_VARIABLE": "some-value"}).
+					WithEnv(map[string]string{
+						"BPE_SOME_VARIABLE": "some-value",
+						"BP_IMAGE_LABELS":   "some-label=some-value",
+					}).
 					Execute(name, source)
 				Expect(err).NotTo(HaveOccurred())
 
@@ -104,8 +108,10 @@ func testYarn(t *testing.T, context spec.G, it spec.S) {
 				Expect(logs).To(ContainLines(ContainSubstring("Procfile Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("web: node server.js")))
 				Expect(logs).To(ContainLines(ContainSubstring("Environment Variables Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("Image Labels Buildpack")))
 
 				Expect(image.Buildpacks[5].Layers["environment-variables"].Metadata["variables"]).To(Equal(map[string]interface{}{"SOME_VARIABLE": "some-value"}))
+				Expect(image.Labels["some-label"]).To(Equal("some-value"))
 
 				container, err = docker.Container.Run.
 					WithEnv(map[string]string{"PORT": "8080"}).
