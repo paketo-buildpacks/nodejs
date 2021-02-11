@@ -3,19 +3,19 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/node-engine:0.1.6"
+  uri = "docker://gcr.io/paketo-buildpacks/node-engine:0.1.7"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/node-start:0.0.10"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/npm-install:0.2.5"
+  uri = "docker://gcr.io/paketo-buildpacks/npm-install:0.2.6"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/npm-start:0.0.3"
+  uri = "docker://gcr.io/paketo-buildpacks/npm-start:0.0.4"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/yarn-install:0.2.2"
+  uri = "docker://gcr.io/paketo-buildpacks/yarn-install:0.2.3"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/yarn:0.1.2"
@@ -25,3 +25,9 @@
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/procfile:4.0.0"
+
+[[dependencies]]
+  uri = "docker://gcr.io/paketo-buildpacks/environment-variables:3.0.0"
+
+[[dependencies]]
+  uri = "docker://gcr.io/paketo-buildpacks/image-labels:3.0.0"

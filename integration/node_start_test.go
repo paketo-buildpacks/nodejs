@@ -65,6 +65,8 @@ func testNodeStart(t *testing.T, context spec.G, it spec.S) {
 			Expect(logs).To(ContainLines(ContainSubstring("Node Engine Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("Node Start Buildpack")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Procfile Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Environment Variables Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Image Labels Buildpack")))
 
 			container, err = docker.Container.Run.
 				WithEnv(map[string]string{"PORT": "8080"}).
@@ -85,16 +87,20 @@ func testNodeStart(t *testing.T, context spec.G, it spec.S) {
 			Expect(string(content)).To(ContainSubstring("hello world"))
 		})
 
-		context("when there is a Procfile", func() {
+		context("when using optional utility buildpacks", func() {
 			it.Before(func() {
 				Expect(ioutil.WriteFile(filepath.Join(source, "Procfile"), []byte("web: node server.js"), 0644)).To(Succeed())
 			})
-			it("should build a working OCI image and run the app with the start command from the Procfile", func() {
+			it("should build a working OCI image and run the app with the start command from the Procfile and other utility buildpacks", func() {
 				var err error
 				var logs fmt.Stringer
 				image, logs, err = pack.WithNoColor().Build.
 					WithBuildpacks(nodeBuildpack).
 					WithPullPolicy("never").
+					WithEnv(map[string]string{
+						"BPE_SOME_VARIABLE": "some-value",
+						"BP_IMAGE_LABELS":   "some-label=some-value",
+					}).
 					Execute(name, source)
 				Expect(err).NotTo(HaveOccurred())
 
@@ -102,6 +108,11 @@ func testNodeStart(t *testing.T, context spec.G, it spec.S) {
 				Expect(logs).To(ContainLines(ContainSubstring("Node Start Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Procfile Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("web: node server.js")))
+				Expect(logs).To(ContainLines(ContainSubstring("Environment Variables Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("Image Labels Buildpack")))
+
+				Expect(image.Buildpacks[3].Layers["environment-variables"].Metadata["variables"]).To(Equal(map[string]interface{}{"SOME_VARIABLE": "some-value"}))
+				Expect(image.Labels["some-label"]).To(Equal("some-value"))
 
 				container, err = docker.Container.Run.
 					WithEnv(map[string]string{"PORT": "8080"}).
