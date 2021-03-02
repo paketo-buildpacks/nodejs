@@ -11,6 +11,11 @@ api = "0.2"
 [[order]]
 
   [[order.group]]
+    id = "paketo-buildpacks/ca-certificates"
+    optional = true
+    version = "2.1.0"
+
+  [[order.group]]
     id = "paketo-buildpacks/node-engine"
     version = "0.2.0"
 
@@ -44,6 +49,11 @@ api = "0.2"
 [[order]]
 
   [[order.group]]
+    id = "paketo-buildpacks/ca-certificates"
+    optional = true
+    version = "2.1.0"
+
+  [[order.group]]
     id = "paketo-buildpacks/node-engine"
     version = "0.2.0"
 
@@ -71,6 +81,11 @@ api = "0.2"
     version = "3.0.0"
 
 [[order]]
+
+  [[order.group]]
+    id = "paketo-buildpacks/ca-certificates"
+    optional = true
+    version = "2.1.0"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
