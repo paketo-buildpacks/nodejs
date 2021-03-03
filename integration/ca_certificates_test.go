@@ -6,9 +6,10 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"net/http/httputil"
+	"os"
 	"path/filepath"
 	"testing"
+	"time"
 
 	"github.com/paketo-buildpacks/occam"
 	"github.com/sclevine/spec"
@@ -31,7 +32,7 @@ func testCaCerts(t *testing.T, context spec.G, it spec.S) {
 		docker = occam.NewDocker()
 	})
 
-	context.Focus("the app uses ca certificates", func() {
+	context("the app uses ca certificates", func() {
 		var (
 			image     occam.Image
 			container occam.Container
@@ -66,14 +67,13 @@ func testCaCerts(t *testing.T, context spec.G, it spec.S) {
 					},
 				},
 			}
-
 		})
 
 		it.After(func() {
-			// Expect(docker.Container.Remove.Execute(container.ID)).To(Succeed())
-			// Expect(docker.Image.Remove.Execute(image.ID)).To(Succeed())
-			// Expect(docker.Volume.Remove.Execute(occam.CacheVolumeNames(name))).To(Succeed())
-			// Expect(os.RemoveAll(source)).To(Succeed())
+			Expect(docker.Container.Remove.Execute(container.ID)).To(Succeed())
+			Expect(docker.Image.Remove.Execute(image.ID)).To(Succeed())
+			Expect(docker.Volume.Remove.Execute(occam.CacheVolumeNames(name))).To(Succeed())
+			Expect(os.RemoveAll(source)).To(Succeed())
 		})
 
 		it("builds a working OCI image and requests made with a client-side cert succeed", func() {
@@ -108,21 +108,21 @@ func testCaCerts(t *testing.T, context spec.G, it spec.S) {
 				ContainSubstring("Added 1 additional CA certificate(s) to system truststore"),
 			)
 
-			// Eventually(container).Should(Serve())
+			// give the app 1 second to get set up before we curl it
+			time.Sleep(1 * time.Second)
+
 			request, err := http.NewRequest("GET", fmt.Sprintf("https://localhost:%s", container.HostPort("8080")), nil)
 			Expect(err).NotTo(HaveOccurred())
 
 			response, err := client.Do(request)
 			Expect(err).NotTo(HaveOccurred())
-			// defer response.Body.Close()
+			defer response.Body.Close()
+
 			Expect(response.StatusCode).To(Equal(http.StatusOK))
 
-			dump, err := httputil.DumpResponse(response, true)
+			content, err := ioutil.ReadAll(response.Body)
 			Expect(err).NotTo(HaveOccurred())
-
-			Expect(dump).To(ContainLines(ContainSubstring("hello world")))
-
+			Expect(string(content)).To(ContainSubstring("Hello, world!"))
 		})
-
 	})
 }
