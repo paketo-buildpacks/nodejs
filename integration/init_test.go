@@ -36,6 +36,5 @@ func TestIntegration(t *testing.T) {
 	suite("NPM", testNPM)
 	suite("Yarn", testYarn)
 	suite("NodeStart", testNodeStart)
-	suite("CaCerts", testCaCerts)
 	suite.Run(t)
 }
