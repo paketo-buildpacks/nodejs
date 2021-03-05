@@ -1,6 +1,5 @@
 const fs = require('fs');
 const https = require('https');
-const tls = require('tls');
 const port = process.env.PORT || 8080;
 
 const options = {

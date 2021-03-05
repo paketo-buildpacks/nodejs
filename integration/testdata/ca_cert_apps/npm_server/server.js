@@ -1,7 +1,6 @@
 const fs = require('fs');
 const https = require('https');
 const leftpad = require('leftpad');
-const tls = require('tls');
 const port = process.env.PORT || 8080;
 
 const options = {
@@ -16,7 +15,6 @@ const handler = (req, res) => {
     res.writeHead(401);
     return res.end('Invalid client certificate authentication. ' + req.client.authorizationError);
   }
-
   res.end(JSON.stringify(process.env));
 };
 
@@ -26,5 +24,5 @@ server.listen(port, (err) => {
   if (err) {
     return console.log('something bad happened', err);
   }
-  console.log(`NOT vendored server is listening on ${port}`);
+  console.log(`server is listening on ${port}`);
 });

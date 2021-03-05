@@ -187,12 +187,12 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 				Expect(logs).To(ContainLines(ContainSubstring("NPM Install Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("NPM Start Buildpack")))
 
+				// NOTE: NODE_OPTIONS="--use-openssl-ca" is NOT required since the node binary is compiled with `--openssl-use-def-ca-store`
 				container, err = docker.Container.Run.
 					WithPublish("8080").
 					WithEnv(map[string]string{
 						"PORT":                 "8080",
 						"SERVICE_BINDING_ROOT": "/bindings",
-						"NODE_OPTIONS":         "--use-openssl-ca",
 					}).
 					WithVolume(fmt.Sprintf("%s/binding:/bindings/ca-certificates", source)).
 					Execute(image.ID)
