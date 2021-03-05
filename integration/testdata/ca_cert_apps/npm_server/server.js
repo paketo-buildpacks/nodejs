@@ -1,5 +1,6 @@
 const fs = require('fs');
 const https = require('https');
+const leftpad = require('leftpad');
 const tls = require('tls');
 const port = process.env.PORT || 8080;
 
@@ -16,15 +17,14 @@ const handler = (req, res) => {
     return res.end('Invalid client certificate authentication. ' + req.client.authorizationError);
   }
 
-  res.writeHead(200);
-  res.end('Hello, world!');
+  res.end(JSON.stringify(process.env));
 };
 
 const server = https.createServer(options, handler);
 
-process.once('SIGINT', function (code) {
-  console.log('echo from SIGINT handler');
-  server.close();
+server.listen(port, (err) => {
+  if (err) {
+    return console.log('something bad happened', err);
+  }
+  console.log(`NOT vendored server is listening on ${port}`);
 });
-
-server.listen(port);

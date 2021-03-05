@@ -10,7 +10,6 @@ import (
 	"os"
 	"path/filepath"
 	"testing"
-	"time"
 
 	"github.com/paketo-buildpacks/occam"
 	"github.com/sclevine/spec"
@@ -151,16 +150,16 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 
 			it.Before(func() {
 				var err error
-				source, err = occam.Source(filepath.Join("testdata", "npm_ca_certs"))
+				source, err = occam.Source(filepath.Join("testdata", "ca_cert_apps"))
 				Expect(err).NotTo(HaveOccurred())
 
-				caCert, err := ioutil.ReadFile(fmt.Sprintf("%s/client/ca.pem", source))
+				caCert, err := ioutil.ReadFile(fmt.Sprintf("%s/client-certs/ca.pem", source))
 				Expect(err).ToNot(HaveOccurred())
 
 				caCertPool := x509.NewCertPool()
 				caCertPool.AppendCertsFromPEM(caCert)
 
-				cert, err := tls.LoadX509KeyPair(fmt.Sprintf("%s/client/cert.pem", source), fmt.Sprintf("%s/client/key.pem", source))
+				cert, err := tls.LoadX509KeyPair(fmt.Sprintf("%s/client-certs/cert.pem", source), fmt.Sprintf("%s/client-certs/key.pem", source))
 				Expect(err).ToNot(HaveOccurred())
 
 				client = &http.Client{
@@ -180,7 +179,7 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 				image, logs, err = pack.WithNoColor().Build.
 					WithBuildpacks(nodeBuildpack).
 					WithPullPolicy("never").
-					Execute(name, filepath.Join(source, "server"))
+					Execute(name, filepath.Join(source, "npm_server"))
 				Expect(err).NotTo(HaveOccurred())
 
 				Expect(logs).To(ContainLines(ContainSubstring("CA Certificates Buildpack")))
@@ -195,7 +194,7 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 						"SERVICE_BINDING_ROOT": "/bindings",
 						"NODE_OPTIONS":         "--use-openssl-ca",
 					}).
-					WithVolume(fmt.Sprintf("%s/server/binding:/bindings/ca-certificates", source)).
+					WithVolume(fmt.Sprintf("%s/binding:/bindings/ca-certificates", source)).
 					Execute(image.ID)
 				Expect(err).NotTo(HaveOccurred())
 
@@ -207,13 +206,15 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 					ContainSubstring("Added 1 additional CA certificate(s) to system truststore"),
 				)
 
-				// give the app 1 second to get set up before we curl it
-				time.Sleep(1 * time.Second)
-
-				request, err := http.NewRequest("GET", fmt.Sprintf("http://localhost:%s/env", container.HostPort("8080")), nil)
+				request, err := http.NewRequest("GET", fmt.Sprintf("https://localhost:%s/env", container.HostPort("8080")), nil)
 				Expect(err).NotTo(HaveOccurred())
 
-				response, err := client.Do(request)
+				var response *http.Response
+				Eventually(func() error {
+					var err error
+					response, err = client.Do(request)
+					return err
+				}).Should(BeNil())
 				Expect(err).NotTo(HaveOccurred())
 				defer response.Body.Close()
 
