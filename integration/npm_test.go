@@ -1,6 +1,8 @@
 package integration_test
 
 import (
+	"crypto/tls"
+	"crypto/x509"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
@@ -117,7 +119,7 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 				Expect(logs).To(ContainLines(ContainSubstring("Environment Variables Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Image Labels Buildpack")))
 
-				Expect(image.Buildpacks[4].Layers["environment-variables"].Metadata["variables"]).To(Equal(map[string]interface{}{"SOME_VARIABLE": "some-value"}))
+				Expect(image.Buildpacks[5].Layers["environment-variables"].Metadata["variables"]).To(Equal(map[string]interface{}{"SOME_VARIABLE": "some-value"}))
 				Expect(image.Labels["some-label"]).To(Equal("some-value"))
 
 				container, err = docker.Container.Run.
@@ -136,6 +138,91 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 				var env struct {
 					NpmConfigLoglevel string `json:"NPM_CONFIG_LOGLEVEL"`
 				}
+				Expect(json.NewDecoder(response.Body).Decode(&env)).To(Succeed())
+				Expect(env.NpmConfigLoglevel).To(Equal("error"))
+			})
+		})
+
+		context("when using CA certificates", func() {
+			var (
+				client *http.Client
+			)
+
+			it.Before(func() {
+				var err error
+				source, err = occam.Source(filepath.Join("testdata", "ca_cert_apps"))
+				Expect(err).NotTo(HaveOccurred())
+
+				caCert, err := ioutil.ReadFile(fmt.Sprintf("%s/client-certs/ca.pem", source))
+				Expect(err).ToNot(HaveOccurred())
+
+				caCertPool := x509.NewCertPool()
+				caCertPool.AppendCertsFromPEM(caCert)
+
+				cert, err := tls.LoadX509KeyPair(fmt.Sprintf("%s/client-certs/cert.pem", source), fmt.Sprintf("%s/client-certs/key.pem", source))
+				Expect(err).ToNot(HaveOccurred())
+
+				client = &http.Client{
+					Transport: &http.Transport{
+						TLSClientConfig: &tls.Config{
+							RootCAs:      caCertPool,
+							Certificates: []tls.Certificate{cert},
+							MinVersion:   tls.VersionTLS12,
+						},
+					},
+				}
+			})
+
+			it("builds a working OCI image and uses a client-side CA cert for requests", func() {
+				var err error
+				var logs fmt.Stringer
+				image, logs, err = pack.WithNoColor().Build.
+					WithBuildpacks(nodeBuildpack).
+					WithPullPolicy("never").
+					Execute(name, filepath.Join(source, "npm_server"))
+				Expect(err).NotTo(HaveOccurred())
+
+				Expect(logs).To(ContainLines(ContainSubstring("CA Certificates Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("Node Engine Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("NPM Install Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("NPM Start Buildpack")))
+
+				// NOTE: NODE_OPTIONS="--use-openssl-ca" is NOT required since the node binary is compiled with `--openssl-use-def-ca-store`
+				container, err = docker.Container.Run.
+					WithPublish("8080").
+					WithEnv(map[string]string{
+						"PORT":                 "8080",
+						"SERVICE_BINDING_ROOT": "/bindings",
+					}).
+					WithVolume(fmt.Sprintf("%s/binding:/bindings/ca-certificates", source)).
+					Execute(image.ID)
+				Expect(err).NotTo(HaveOccurred())
+
+				Eventually(func() string {
+					cLogs, err := docker.Container.Logs.Execute(container.ID)
+					Expect(err).NotTo(HaveOccurred())
+					return cLogs.String()
+				}).Should(
+					ContainSubstring("Added 1 additional CA certificate(s) to system truststore"),
+				)
+
+				request, err := http.NewRequest("GET", fmt.Sprintf("https://localhost:%s/env", container.HostPort("8080")), nil)
+				Expect(err).NotTo(HaveOccurred())
+
+				var response *http.Response
+				Eventually(func() error {
+					var err error
+					response, err = client.Do(request)
+					return err
+				}).Should(BeNil())
+				defer response.Body.Close()
+
+				Expect(response.StatusCode).To(Equal(http.StatusOK))
+
+				var env struct {
+					NpmConfigLoglevel string `json:"NPM_CONFIG_LOGLEVEL"`
+				}
+
 				Expect(json.NewDecoder(response.Body).Decode(&env)).To(Succeed())
 				Expect(env.NpmConfigLoglevel).To(Equal("error"))
 			})
