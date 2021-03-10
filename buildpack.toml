@@ -25,7 +25,7 @@ api = "0.2"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-install"
-    version = "0.2.4"
+    version = "0.2.5"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-start"
