@@ -21,7 +21,7 @@
   uri = "docker://gcr.io/paketo-buildpacks/yarn:0.1.2"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/yarn-start:0.0.4"
+  uri = "docker://gcr.io/paketo-buildpacks/yarn-start:0.0.5"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/procfile:4.0.0"
