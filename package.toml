@@ -9,7 +9,7 @@
   uri = "docker://gcr.io/paketo-buildpacks/node-start:0.1.1"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/npm-install:0.2.6"
+  uri = "docker://gcr.io/paketo-buildpacks/npm-install:0.2.7"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/npm-start:0.0.4"
