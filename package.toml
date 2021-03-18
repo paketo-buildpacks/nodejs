@@ -12,7 +12,7 @@
   uri = "docker://gcr.io/paketo-buildpacks/npm-install:0.2.7"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/npm-start:0.0.4"
+  uri = "docker://gcr.io/paketo-buildpacks/npm-start:0.1.0"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/yarn-install:0.2.5"
