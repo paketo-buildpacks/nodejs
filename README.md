@@ -29,5 +29,6 @@ This buildpack also includes the following utility buildpacks:
 - [Environment Variables CNB](https://github.com/paketo-buildpacks/environment-variables)
 - [Image Labels CNB](https://github.com/paketo-buildpacks/image-labels)
 - [CA Certificates CNB](https://github.com/paketo-buildpacks/ca-certificates)
+- [Node Run Script CNB](https://github.com/paketo-buildpacks/node-run-script)
 
 Check out the [Paketo Node.js docs](https://paketo.io/docs/buildpacks/language-family-buildpacks/nodejs/) for more information.

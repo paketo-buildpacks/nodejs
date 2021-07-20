@@ -105,8 +105,9 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 					WithBuildpacks(nodeBuildpack).
 					WithPullPolicy("never").
 					WithEnv(map[string]string{
-						"BPE_SOME_VARIABLE": "some-value",
-						"BP_IMAGE_LABELS":   "some-label=some-value",
+						"BPE_SOME_VARIABLE":   "some-value",
+						"BP_IMAGE_LABELS":     "some-label=some-value",
+						"BP_NODE_RUN_SCRIPTS": "some-script",
 					}).
 					Execute(name, source)
 				Expect(err).NotTo(HaveOccurred())
@@ -118,8 +119,9 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 				Expect(logs).To(ContainLines(ContainSubstring("web: node server.js")))
 				Expect(logs).To(ContainLines(ContainSubstring("Environment Variables Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Image Labels Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("Node Run Script")))
 
-				Expect(image.Buildpacks[5].Layers["environment-variables"].Metadata["variables"]).To(Equal(map[string]interface{}{"SOME_VARIABLE": "some-value"}))
+				Expect(image.Buildpacks[6].Layers["environment-variables"].Metadata["variables"]).To(Equal(map[string]interface{}{"SOME_VARIABLE": "some-value"}))
 				Expect(image.Labels["some-label"]).To(Equal("some-value"))
 
 				container, err = docker.Container.Run.
