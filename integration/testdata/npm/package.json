@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "some app",
   "scripts": {
+    "some-script": "echo \"npm scripts running!\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
