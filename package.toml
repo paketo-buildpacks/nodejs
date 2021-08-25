@@ -37,3 +37,6 @@
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/node-run-script:0.1.0"
+
+[[dependencies]]
+  uri = "docker://gcr.io/paketo-buildpacks/node-module-bom:0.1.0"

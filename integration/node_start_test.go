@@ -136,6 +136,55 @@ func testNodeStart(t *testing.T, context spec.G, it spec.S) {
 			})
 		})
 
+		context("when building a vendored Node app", func() {
+			it.Before(func() {
+				var err error
+				source, err = occam.Source(filepath.Join("testdata", "vendored"))
+				Expect(err).NotTo(HaveOccurred())
+			})
+
+			it.After(func() {
+				Expect(os.RemoveAll(source)).To(Succeed())
+			})
+
+			it("should build a working OCI image and run the app", func() {
+				var err error
+				var logs fmt.Stringer
+				image, logs, err = pack.WithNoColor().Build.
+					WithBuildpacks(nodeBuildpack).
+					WithPullPolicy("never").
+					Execute(name, source)
+				Expect(err).NotTo(HaveOccurred())
+
+				Expect(logs).To(ContainLines(ContainSubstring("Node Engine Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("Node Module Bill of Materials Generator Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("Node Start Buildpack")))
+				Expect(logs).NotTo(ContainLines(ContainSubstring("Procfile Buildpack")))
+				Expect(logs).NotTo(ContainLines(ContainSubstring("Environment Variables Buildpack")))
+				Expect(logs).NotTo(ContainLines(ContainSubstring("Image Labels Buildpack")))
+
+				Expect(image.Buildpacks[2].Key).To(Equal("paketo-buildpacks/node-module-bom"))
+
+				container, err = docker.Container.Run.
+					WithEnv(map[string]string{"PORT": "8080"}).
+					WithPublish("8080").
+					WithPublishAll().
+					Execute(image.ID)
+				Expect(err).NotTo(HaveOccurred())
+
+				Eventually(container).Should(BeAvailable())
+
+				response, err := http.Get(fmt.Sprintf("http://localhost:%s", container.HostPort("8080")))
+				Expect(err).NotTo(HaveOccurred())
+				defer response.Body.Close()
+				Expect(response.StatusCode).To(Equal(http.StatusOK))
+
+				content, err := ioutil.ReadAll(response.Body)
+				Expect(err).NotTo(HaveOccurred())
+				Expect(string(content)).To(ContainSubstring("hello world"))
+			})
+		})
+
 		context("when using CA certificates", func() {
 			var (
 				client *http.Client
