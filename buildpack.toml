@@ -13,7 +13,7 @@ api = "0.4"
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "2.3.2"
+    version = "2.4.0"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
@@ -44,24 +44,24 @@ api = "0.4"
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "4.2.2"
+    version = "4.3.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "3.1.1"
+    version = "3.2.0"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "3.1.2"
+    version = "3.2.0"
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "2.3.2"
+    version = "2.4.0"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
@@ -88,24 +88,24 @@ api = "0.4"
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "4.2.2"
+    version = "4.3.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "3.1.1"
+    version = "3.2.0"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "3.1.2"
+    version = "3.2.0"
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "2.3.2"
+    version = "2.4.0"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
@@ -123,14 +123,14 @@ api = "0.4"
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "4.2.2"
+    version = "4.3.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "3.1.1"
+    version = "3.2.0"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "3.1.2"
+    version = "3.2.0"
