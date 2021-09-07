@@ -3,7 +3,7 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/node-engine:0.7.1"
+  uri = "docker://gcr.io/paketo-buildpacks/node-engine:0.7.2"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/node-start:0.3.0"
@@ -18,7 +18,7 @@
   uri = "docker://gcr.io/paketo-buildpacks/yarn-install:0.4.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/yarn:0.4.0"
+  uri = "docker://gcr.io/paketo-buildpacks/yarn:0.4.1"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/yarn-start:0.2.0"
