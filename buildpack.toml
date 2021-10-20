@@ -118,7 +118,7 @@ api = "0.4"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
-    version = "0.3.0"
+    version = "0.4.0"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
