@@ -35,7 +35,7 @@ api = "0.4"
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
     optional = true
-    version = "0.1.0"
+    version = "0.2.0"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-start"
@@ -79,7 +79,7 @@ api = "0.4"
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
     optional = true
-    version = "0.1.0"
+    version = "0.2.0"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-start"

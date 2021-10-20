@@ -36,7 +36,7 @@
   uri = "docker://gcr.io/paketo-buildpacks/ca-certificates:2.4.2"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/node-run-script:0.1.0"
+  uri = "docker://gcr.io/paketo-buildpacks/node-run-script:0.2.0"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/node-module-bom:0.1.2"
