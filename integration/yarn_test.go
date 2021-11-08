@@ -100,13 +100,15 @@ func testYarn(t *testing.T, context spec.G, it spec.S) {
 					WithBuildpacks(nodeBuildpack).
 					WithPullPolicy("never").
 					WithEnv(map[string]string{
-						"BPE_SOME_VARIABLE":   "some-value",
-						"BP_IMAGE_LABELS":     "some-label=some-value",
-						"BP_NODE_RUN_SCRIPTS": "some-script",
+						"BPE_SOME_VARIABLE":      "some-value",
+						"BP_IMAGE_LABELS":        "some-label=some-value",
+						"BP_NODE_RUN_SCRIPTS":    "some-script",
+						"BP_LIVE_RELOAD_ENABLED": "true",
 					}).
 					Execute(name, source)
 				Expect(err).NotTo(HaveOccurred())
 
+				Expect(logs).To(ContainLines(ContainSubstring("Watchexec Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Node Engine Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Yarn Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Yarn Install Buildpack")))
@@ -118,9 +120,10 @@ func testYarn(t *testing.T, context spec.G, it spec.S) {
 				Expect(logs).To(ContainLines(ContainSubstring("Image Labels Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Node Run Script")))
 
-				Expect(image.Buildpacks[8].Layers["environment-variables"].Metadata["variables"]).To(Equal(map[string]interface{}{"SOME_VARIABLE": "some-value"}))
+				Expect(image.Buildpacks[9].Key).To(Equal("paketo-buildpacks/environment-variables"))
+				Expect(image.Buildpacks[9].Layers["environment-variables"].Metadata["variables"]).To(Equal(map[string]interface{}{"SOME_VARIABLE": "some-value"}))
 				Expect(image.Labels["some-label"]).To(Equal("some-value"))
-				Expect(image.Buildpacks[4].Key).To(Equal("paketo-buildpacks/node-module-bom"))
+				Expect(image.Buildpacks[5].Key).To(Equal("paketo-buildpacks/node-module-bom"))
 
 				container, err = docker.Container.Run.
 					WithEnv(map[string]string{"PORT": "8080"}).
@@ -129,16 +132,7 @@ func testYarn(t *testing.T, context spec.G, it spec.S) {
 					Execute(image.ID)
 				Expect(err).NotTo(HaveOccurred())
 
-				Eventually(container).Should(BeAvailable())
-
-				response, err := http.Get(fmt.Sprintf("http://localhost:%s", container.HostPort("8080")))
-				Expect(err).NotTo(HaveOccurred())
-				defer response.Body.Close()
-				Expect(response.StatusCode).To(Equal(http.StatusOK))
-
-				content, err := ioutil.ReadAll(response.Body)
-				Expect(err).NotTo(HaveOccurred())
-				Expect(string(content)).To(ContainSubstring("Hello, World!"))
+				Eventually(container).Should(Serve(ContainSubstring("Hello, World")).OnPort(8080))
 			})
 		})
 

@@ -16,6 +16,11 @@ api = "0.4"
     version = "2.4.2"
 
   [[order.group]]
+    id = "paketo-buildpacks/watchexec"
+    optional = true
+    version = "1.2.0"
+
+  [[order.group]]
     id = "paketo-buildpacks/node-engine"
     version = "0.10.0"
 
@@ -106,6 +111,11 @@ api = "0.4"
     id = "paketo-buildpacks/ca-certificates"
     optional = true
     version = "2.4.2"
+
+  [[order.group]]
+    id = "paketo-buildpacks/watchexec"
+    optional = true
+    version = "1.2.0"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
