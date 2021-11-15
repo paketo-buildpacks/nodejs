@@ -6,7 +6,7 @@
   uri = "docker://gcr.io/paketo-buildpacks/node-engine:0.10.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/node-start:0.5.0"
+  uri = "docker://gcr.io/paketo-buildpacks/node-start:0.6.0"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/npm-install:0.5.0"
@@ -36,7 +36,7 @@
   uri = "docker://gcr.io/paketo-buildpacks/ca-certificates:2.4.2"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/node-run-script:0.2.1"
+  uri = "docker://gcr.io/paketo-buildpacks/node-run-script:0.3.0"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/node-module-bom:0.1.2"
