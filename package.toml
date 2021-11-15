@@ -3,7 +3,7 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/node-engine:0.10.0"
+  uri = "docker://gcr.io/paketo-buildpacks/node-engine:0.11.0"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/node-start:0.6.0"
@@ -39,4 +39,4 @@
   uri = "docker://gcr.io/paketo-buildpacks/node-run-script:0.3.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/node-module-bom:0.1.2"
+  uri = "docker://gcr.io/paketo-buildpacks/node-module-bom:0.2.0"
