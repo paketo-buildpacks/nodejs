@@ -69,6 +69,11 @@ api = "0.6"
     version = "2.4.2"
 
   [[order.group]]
+    id = "paketo-buildpacks/watchexec"
+    optional = true
+    version = "1.2.0"
+
+  [[order.group]]
     id = "paketo-buildpacks/node-engine"
     version = "0.11.0"
 
