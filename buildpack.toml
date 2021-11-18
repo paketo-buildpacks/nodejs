@@ -79,7 +79,7 @@ api = "0.6"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-install"
-    version = "0.5.0"
+    version = "0.6.0"
 
   [[order.group]]
     id = "paketo-buildpacks/node-module-bom"
