@@ -33,11 +33,6 @@ api = "0.6"
     version = "0.6.0"
 
   [[order.group]]
-    id = "paketo-buildpacks/node-module-bom"
-    optional = true
-    version = "0.2.0"
-
-  [[order.group]]
     id = "paketo-buildpacks/node-run-script"
     optional = true
     version = "0.3.0"
