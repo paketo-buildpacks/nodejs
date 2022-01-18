@@ -22,7 +22,7 @@ api = "0.6"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "0.11.2"
+    version = "0.11.3"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn"
@@ -75,7 +75,7 @@ api = "0.6"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "0.11.2"
+    version = "0.11.3"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-install"
@@ -124,7 +124,7 @@ api = "0.6"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "0.11.2"
+    version = "0.11.3"
 
   [[order.group]]
     id = "paketo-buildpacks/node-module-bom"
