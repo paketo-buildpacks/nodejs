@@ -30,7 +30,7 @@ api = "0.6"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-install"
-    version = "0.6.0"
+    version = "0.7.0"
 
   [[order.group]]
     id = "paketo-buildpacks/node-module-bom"
@@ -79,7 +79,7 @@ api = "0.6"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-install"
-    version = "0.6.2"
+    version = "0.7.0"
 
   [[order.group]]
     id = "paketo-buildpacks/node-module-bom"
