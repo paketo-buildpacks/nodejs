@@ -5,6 +5,10 @@ api = "0.6"
   id = "paketo-buildpacks/nodejs"
   name = "Paketo Node.js Buildpack"
 
+  [[buildpack.licenses]]
+    type = "Apache-2.0"
+    uri = "https://github.com/paketo-buildpacks/nodejs/blob/main/LICENSE"
+
 [metadata]
   include-files = ["buildpack.toml"]
 
@@ -18,7 +22,7 @@ api = "0.6"
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "2.1.0"
+    version = "2.1.1"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
@@ -71,7 +75,7 @@ api = "0.6"
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "2.1.0"
+    version = "2.1.1"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
@@ -120,7 +124,7 @@ api = "0.6"
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "2.1.0"
+    version = "2.1.1"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
