@@ -77,13 +77,20 @@ func testNodeStart(t *testing.T, context spec.G, it spec.S) {
 				Execute(image.ID)
 			Expect(err).NotTo(HaveOccurred())
 
+			Eventually(container, "5s").Should(BeAvailable())
 			Eventually(container).Should(Serve(ContainSubstring("hello world")).OnPort(8080))
 		})
 
 		context("when using optional utility buildpacks", func() {
+			var procfileContainer occam.Container
 			it.Before(func() {
-				Expect(ioutil.WriteFile(filepath.Join(source, "Procfile"), []byte("web: node server.js"), 0644)).To(Succeed())
+				Expect(os.WriteFile(filepath.Join(source, "Procfile"), []byte("procfile: echo Procfile command"), 0644)).To(Succeed())
 			})
+
+			it.After(func() {
+				Expect(docker.Container.Remove.Execute(procfileContainer.ID)).To(Succeed())
+			})
+
 			it("should build a working OCI image and run the app with the start command from the Procfile and other utility buildpacks", func() {
 				var err error
 				var logs fmt.Stringer
@@ -101,7 +108,6 @@ func testNodeStart(t *testing.T, context spec.G, it spec.S) {
 				Expect(logs).To(ContainLines(ContainSubstring("Node Engine Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Node Start Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Procfile Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("web: node server.js")))
 				Expect(logs).To(ContainLines(ContainSubstring("Environment Variables Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Image Labels Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Watchexec Buildpack")))
@@ -117,7 +123,18 @@ func testNodeStart(t *testing.T, context spec.G, it spec.S) {
 					Execute(image.ID)
 				Expect(err).NotTo(HaveOccurred())
 
+				Eventually(container, "5s").Should(BeAvailable())
 				Eventually(container).Should(Serve(ContainSubstring("hello world")).OnPort(8080))
+
+				procfileContainer, err = docker.Container.Run.
+					WithEntrypoint("procfile").
+					Execute(image.ID)
+				Expect(err).NotTo(HaveOccurred())
+
+				containerLogs, err := docker.Container.Logs.Execute(procfileContainer.ID)
+				Expect(err).NotTo(HaveOccurred())
+
+				Expect(containerLogs.String()).To(ContainSubstring("Procfile command"))
 			})
 		})
 

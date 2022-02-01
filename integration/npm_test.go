@@ -97,8 +97,13 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 		})
 
 		context("when using optional utility buildpacks", func() {
+			var procfileContainer occam.Container
 			it.Before(func() {
-				Expect(ioutil.WriteFile(filepath.Join(source, "Procfile"), []byte("web: node server.js"), 0644)).To(Succeed())
+				Expect(os.WriteFile(filepath.Join(source, "Procfile"), []byte("procfile: echo Procfile command"), 0644)).To(Succeed())
+			})
+
+			it.After(func() {
+				Expect(docker.Container.Remove.Execute(procfileContainer.ID)).To(Succeed())
 			})
 
 			it("builds a working OCI image for a simple app and uses the Procfile start command and other utility buildpacks", func() {
@@ -122,7 +127,6 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 				Expect(logs).To(ContainLines(ContainSubstring("Node Module Bill of Materials Generator Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("NPM Start Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Procfile Buildpack")))
-				Expect(logs).To(ContainLines(ContainSubstring("web: node server.js")))
 				Expect(logs).To(ContainLines(ContainSubstring("Environment Variables Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Image Labels Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Node Run Script")))
@@ -150,6 +154,16 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 				}
 				Expect(json.NewDecoder(response.Body).Decode(&env)).To(Succeed())
 				Expect(env.NpmConfigLoglevel).To(Equal("error"))
+
+				procfileContainer, err = docker.Container.Run.
+					WithEntrypoint("procfile").
+					Execute(image.ID)
+				Expect(err).NotTo(HaveOccurred())
+
+				containerLogs, err := docker.Container.Logs.Execute(procfileContainer.ID)
+				Expect(err).NotTo(HaveOccurred())
+
+				Expect(containerLogs.String()).To(ContainSubstring("Procfile command"))
 			})
 		})
 
