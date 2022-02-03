@@ -42,4 +42,4 @@
   uri = "docker://gcr.io/paketo-buildpacks/node-module-bom:0.2.1"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/watchexec:2.1.1"
+  uri = "docker://gcr.io/paketo-buildpacks/watchexec:2.1.2"
