@@ -160,10 +160,10 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 					Execute(image.ID)
 				Expect(err).NotTo(HaveOccurred())
 
-				containerLogs, err := docker.Container.Logs.Execute(procfileContainer.ID)
-				Expect(err).NotTo(HaveOccurred())
-
-				Expect(containerLogs.String()).To(ContainSubstring("Procfile command"))
+				Eventually(func() string {
+					clogs, _ := docker.Container.Logs.Execute(procfileContainer.ID)
+					return clogs.String()
+				}).Should(ContainSubstring("Procfile command"))
 			})
 		})
 
