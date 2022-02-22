@@ -3,25 +3,25 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/node-engine:0.11.4"
+  uri = "docker://gcr.io/paketo-buildpacks/node-engine:0.12.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/node-start:0.7.0"
+  uri = "docker://gcr.io/paketo-buildpacks/node-start:0.7.1"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/npm-install:0.7.1"
+  uri = "docker://gcr.io/paketo-buildpacks/npm-install:0.7.2"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/npm-start:0.7.0"
+  uri = "docker://gcr.io/paketo-buildpacks/npm-start:0.8.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/yarn-install:0.7.1"
+  uri = "docker://gcr.io/paketo-buildpacks/yarn-install:0.8.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/yarn:0.5.1"
+  uri = "docker://gcr.io/paketo-buildpacks/yarn:0.6.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/yarn-start:0.7.0"
+  uri = "docker://gcr.io/paketo-buildpacks/yarn-start:0.7.1"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/procfile:5.0.3"
@@ -36,10 +36,10 @@
   uri = "docker://gcr.io/paketo-buildpacks/ca-certificates:3.0.3"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/node-run-script:0.3.1"
+  uri = "docker://gcr.io/paketo-buildpacks/node-run-script:0.3.2"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/node-module-bom:0.2.1"
+  uri = "docker://gcr.io/paketo-buildpacks/node-module-bom:0.2.2"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/watchexec:2.2.0"
