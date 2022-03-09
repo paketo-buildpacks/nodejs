@@ -39,7 +39,7 @@ api = "0.6"
   [[order.group]]
     id = "paketo-buildpacks/node-module-bom"
     optional = true
-    version = "0.2.2"
+    version = "0.2.3"
 
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
@@ -88,7 +88,7 @@ api = "0.6"
   [[order.group]]
     id = "paketo-buildpacks/node-module-bom"
     optional = true
-    version = "0.2.2"
+    version = "0.2.3"
 
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
@@ -133,7 +133,7 @@ api = "0.6"
   [[order.group]]
     id = "paketo-buildpacks/node-module-bom"
     optional = true
-    version = "0.2.2"
+    version = "0.2.3"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
