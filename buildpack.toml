@@ -48,6 +48,7 @@ api = "0.6"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
+    optional = true
     version = "0.8.0"
 
   [[order.group]]
@@ -102,6 +103,7 @@ api = "0.6"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
+    optional = true
     version = "0.8.0"
 
   [[order.group]]
@@ -147,6 +149,7 @@ api = "0.6"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
+    optional = true
     version = "0.8.0"
 
   [[order.group]]
