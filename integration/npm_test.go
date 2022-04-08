@@ -32,7 +32,139 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 		docker = occam.NewDocker()
 	})
 
-	context("when building a node app that uses npm", func() {
+	context("when building a node app that uses npm and has no start script", func() {
+		var (
+			image     occam.Image
+			container occam.Container
+
+			name   string
+			source string
+		)
+
+		it.Before(func() {
+			var err error
+			name, err = occam.RandomName()
+			Expect(err).NotTo(HaveOccurred())
+			source, err = occam.Source(filepath.Join("testdata", "npm_no_start_script"))
+			Expect(err).NotTo(HaveOccurred())
+		})
+
+		it.After(func() {
+			Expect(docker.Container.Remove.Execute(container.ID)).To(Succeed())
+			Expect(docker.Image.Remove.Execute(image.ID)).To(Succeed())
+			Expect(docker.Volume.Remove.Execute(occam.CacheVolumeNames(name))).To(Succeed())
+			Expect(os.RemoveAll(source)).To(Succeed())
+		})
+
+		it("builds a working OCI image for a simple app using node-start exclusively", func() {
+			var err error
+			var logs fmt.Stringer
+			image, logs, _ = pack.WithNoColor().Build.
+				WithBuildpacks(nodeBuildpack).
+				WithPullPolicy("never").
+				Execute(name, source)
+			Expect(err).NotTo(HaveOccurred())
+
+			Expect(logs).To(ContainLines(ContainSubstring("Node Engine Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("NPM Install Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Node Module Bill of Materials Generator Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Node Start Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("NPM Start Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Procfile Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Environment Variables Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Image Labels Buildpack")))
+
+			Expect(image.Buildpacks[3].Key).To(Equal("paketo-buildpacks/node-module-bom"))
+
+			container, err = docker.Container.Run.
+				WithEnv(map[string]string{"PORT": "8080"}).
+				WithPublish("8080").
+				WithPublishAll().
+				Execute(image.ID)
+			Expect(err).NotTo(HaveOccurred())
+
+			Eventually(container, "5s").Should(BeAvailable())
+
+			response, err := http.Get(fmt.Sprintf("http://localhost:%s/env", container.HostPort("8080")))
+			Expect(err).NotTo(HaveOccurred())
+			Expect(response.StatusCode).To(Equal(http.StatusOK))
+
+			var env struct {
+				NpmConfigLoglevel string `json:"NPM_CONFIG_LOGLEVEL"`
+			}
+			Expect(json.NewDecoder(response.Body).Decode(&env)).To(Succeed())
+			Expect(env.NpmConfigLoglevel).To(Equal("error"))
+
+		})
+	})
+
+	context("when building a node app that uses npm, has a start script and a src folder", func() {
+		var (
+			image     occam.Image
+			container occam.Container
+
+			name   string
+			source string
+		)
+
+		it.Before(func() {
+			var err error
+			name, err = occam.RandomName()
+			Expect(err).NotTo(HaveOccurred())
+			source, err = occam.Source(filepath.Join("testdata", "npm_with_src_dir"))
+			Expect(err).NotTo(HaveOccurred())
+		})
+
+		it.After(func() {
+			Expect(docker.Container.Remove.Execute(container.ID)).To(Succeed())
+			Expect(docker.Image.Remove.Execute(image.ID)).To(Succeed())
+			Expect(docker.Volume.Remove.Execute(occam.CacheVolumeNames(name))).To(Succeed())
+			Expect(os.RemoveAll(source)).To(Succeed())
+		})
+
+		it("builds a working OCI image for a simple app using npm-start exclusively", func() {
+			var err error
+			var logs fmt.Stringer
+			image, logs, _ = pack.WithNoColor().Build.
+				WithBuildpacks(nodeBuildpack).
+				WithPullPolicy("never").
+				Execute(name, source)
+			Expect(err).NotTo(HaveOccurred())
+
+			Expect(logs).To(ContainLines(ContainSubstring("Node Engine Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("NPM Install Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Node Module Bill of Materials Generator Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("NPM Start Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Node Start Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Procfile Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Environment Variables Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Image Labels Buildpack")))
+
+			Expect(image.Buildpacks[3].Key).To(Equal("paketo-buildpacks/node-module-bom"))
+
+			container, err = docker.Container.Run.
+				WithEnv(map[string]string{"PORT": "8080"}).
+				WithPublish("8080").
+				WithPublishAll().
+				Execute(image.ID)
+			Expect(err).NotTo(HaveOccurred())
+
+			Eventually(container, "5s").Should(BeAvailable())
+
+			response, err := http.Get(fmt.Sprintf("http://localhost:%s/env", container.HostPort("8080")))
+			Expect(err).NotTo(HaveOccurred())
+			Expect(response.StatusCode).To(Equal(http.StatusOK))
+
+			var env struct {
+				NpmConfigLoglevel string `json:"NPM_CONFIG_LOGLEVEL"`
+			}
+			Expect(json.NewDecoder(response.Body).Decode(&env)).To(Succeed())
+			Expect(env.NpmConfigLoglevel).To(Equal("error"))
+
+		})
+	})
+
+	context("when building a node app that uses npm, has a start script and flat working directory", func() {
 		var (
 			image     occam.Image
 			container occam.Container
@@ -56,7 +188,7 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 			Expect(os.RemoveAll(source)).To(Succeed())
 		})
 
-		it("builds a working OCI image for a simple app", func() {
+		it("builds a working OCI image for a simple app using node-start and npm-start", func() {
 			var err error
 			var logs fmt.Stringer
 			image, logs, err = pack.WithNoColor().Build.

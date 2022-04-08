@@ -31,7 +31,128 @@ func testYarn(t *testing.T, context spec.G, it spec.S) {
 		docker = occam.NewDocker()
 	})
 
-	context("when building a node app that uses yarn", func() {
+	context("when building a node app that uses yarn without a start script", func() {
+		var (
+			image     occam.Image
+			container occam.Container
+
+			name   string
+			source string
+		)
+
+		it.Before(func() {
+			var err error
+			name, err = occam.RandomName()
+			Expect(err).NotTo(HaveOccurred())
+			source, err = occam.Source(filepath.Join("testdata", "yarn_no_start_script"))
+			Expect(err).NotTo(HaveOccurred())
+		})
+
+		it.After(func() {
+			Expect(docker.Container.Remove.Execute(container.ID)).To(Succeed())
+			Expect(docker.Image.Remove.Execute(image.ID)).To(Succeed())
+			Expect(docker.Volume.Remove.Execute(occam.CacheVolumeNames(name))).To(Succeed())
+			Expect(os.RemoveAll(source)).To(Succeed())
+		})
+
+		it("should build a working OCI image for a simple app using node-start exclusively", func() {
+			var err error
+			var logs fmt.Stringer
+			image, logs, err = pack.WithNoColor().Build.
+				WithBuildpacks(nodeBuildpack).
+				WithPullPolicy("never").
+				Execute(name, source)
+			Expect(err).NotTo(HaveOccurred())
+
+			Expect(logs).To(ContainLines(ContainSubstring("Node Engine Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Yarn Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Yarn Install Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Node Module Bill of Materials Generator Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Node Start Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Yarn Start Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Procfile Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Environment Variables Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Image Labels Buildpack")))
+
+			Expect(image.Buildpacks[4].Key).To(Equal("paketo-buildpacks/node-module-bom"))
+
+			container, err = docker.Container.Run.
+				WithEnv(map[string]string{"PORT": "8080"}).
+				WithPublish("8080").
+				WithPublishAll().
+				Execute(image.ID)
+			Expect(err).NotTo(HaveOccurred())
+
+			Eventually(container).Should(BeAvailable())
+
+			response, err := http.Get(fmt.Sprintf("http://localhost:%s", container.HostPort("8080")))
+			Expect(err).NotTo(HaveOccurred())
+			Expect(response.StatusCode).To(Equal(http.StatusOK))
+		})
+
+	})
+
+	context("when building a node app that uses yarn and a nested src directory", func() {
+		var (
+			image     occam.Image
+			container occam.Container
+
+			name   string
+			source string
+		)
+
+		it.Before(func() {
+			var err error
+			name, err = occam.RandomName()
+			Expect(err).NotTo(HaveOccurred())
+			source, err = occam.Source(filepath.Join("testdata", "yarn_with_src_dir"))
+			Expect(err).NotTo(HaveOccurred())
+		})
+
+		it.After(func() {
+			Expect(docker.Container.Remove.Execute(container.ID)).To(Succeed())
+			Expect(docker.Image.Remove.Execute(image.ID)).To(Succeed())
+			Expect(docker.Volume.Remove.Execute(occam.CacheVolumeNames(name))).To(Succeed())
+			Expect(os.RemoveAll(source)).To(Succeed())
+		})
+
+		it("should build a working OCI image for a simple app using yarn-start exclusively", func() {
+			var err error
+			var logs fmt.Stringer
+			image, logs, err = pack.WithNoColor().Build.
+				WithBuildpacks(nodeBuildpack).
+				WithPullPolicy("never").
+				Execute(name, source)
+			Expect(err).NotTo(HaveOccurred())
+
+			Expect(logs).To(ContainLines(ContainSubstring("Node Engine Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Yarn Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Yarn Install Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Node Module Bill of Materials Generator Buildpack")))
+			Expect(logs).To(ContainLines(ContainSubstring("Yarn Start Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Node Start Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Procfile Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Environment Variables Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Image Labels Buildpack")))
+
+			Expect(image.Buildpacks[4].Key).To(Equal("paketo-buildpacks/node-module-bom"))
+
+			container, err = docker.Container.Run.
+				WithEnv(map[string]string{"PORT": "8080"}).
+				WithPublish("8080").
+				WithPublishAll().
+				Execute(image.ID)
+			Expect(err).NotTo(HaveOccurred())
+
+			Eventually(container).Should(BeAvailable())
+
+			response, err := http.Get(fmt.Sprintf("http://localhost:%s", container.HostPort("8080")))
+			Expect(err).NotTo(HaveOccurred())
+			Expect(response.StatusCode).To(Equal(http.StatusOK))
+		})
+	})
+
+	context("when building a node app that uses yarn, a start script and a flat work directory", func() {
 		var (
 			image     occam.Image
 			container occam.Container
@@ -55,7 +176,7 @@ func testYarn(t *testing.T, context spec.G, it spec.S) {
 			Expect(os.RemoveAll(source)).To(Succeed())
 		})
 
-		it("should build a working OCI image for a simple app", func() {
+		it("should build a working OCI image for a simple app using node-start and yarn-start", func() {
 			var err error
 			var logs fmt.Stringer
 			image, logs, err = pack.WithNoColor().Build.
