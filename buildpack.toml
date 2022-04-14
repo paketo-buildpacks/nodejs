@@ -22,7 +22,7 @@ api = "0.6"
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "2.3.5"
+    version = "2.3.6"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
@@ -81,7 +81,7 @@ api = "0.6"
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "2.3.5"
+    version = "2.3.6"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
@@ -136,7 +136,7 @@ api = "0.6"
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "2.3.5"
+    version = "2.3.6"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
