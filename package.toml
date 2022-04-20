@@ -24,13 +24,13 @@
   uri = "docker://gcr.io/paketo-buildpacks/yarn-start:0.8.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/procfile:5.1.0"
+  uri = "docker://gcr.io/paketo-buildpacks/procfile:5.1.1"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/environment-variables:4.1.0"
+  uri = "docker://gcr.io/paketo-buildpacks/environment-variables:4.1.1"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/image-labels:4.1.0"
+  uri = "docker://gcr.io/paketo-buildpacks/image-labels:4.1.1"
 
 [[dependencies]]
   uri = "docker://gcr.io/paketo-buildpacks/ca-certificates:3.2.0"
@@ -42,4 +42,4 @@
   uri = "docker://gcr.io/paketo-buildpacks/node-module-bom:0.2.4"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/watchexec:2.3.6"
+  uri = "docker://gcr.io/paketo-buildpacks/watchexec:2.4.0"
