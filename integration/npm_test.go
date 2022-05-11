@@ -70,6 +70,7 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 			Expect(logs).To(ContainLines(ContainSubstring("Node Start Buildpack")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("NPM Start Buildpack")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Procfile Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Datadog Buildpack")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Environment Variables Buildpack")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Image Labels Buildpack")))
 
@@ -136,6 +137,7 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 			Expect(logs).To(ContainLines(ContainSubstring("NPM Start Buildpack")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Node Start Buildpack")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Procfile Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Datadog Buildpack")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Environment Variables Buildpack")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Image Labels Buildpack")))
 
@@ -202,6 +204,7 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 			Expect(logs).To(ContainLines(ContainSubstring("Node Start Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("NPM Start Buildpack")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Procfile Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Datadog Buildpack")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Environment Variables Buildpack")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Image Labels Buildpack")))
 
@@ -249,6 +252,7 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 						"BP_IMAGE_LABELS":        "some-label=some-value",
 						"BP_NODE_RUN_SCRIPTS":    "some-script",
 						"BP_LIVE_RELOAD_ENABLED": "true",
+						"BP_DATADOG_ENABLED":     "true",
 					}).
 					Execute(name, source)
 				Expect(err).NotTo(HaveOccurred())
@@ -260,12 +264,13 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 				Expect(logs).To(ContainLines(ContainSubstring("Node Module Bill of Materials Generator Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("NPM Start Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Procfile Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("Datadog Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Environment Variables Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Image Labels Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Node Run Script")))
 
-				Expect(image.Buildpacks[9].Key).To(Equal("paketo-buildpacks/environment-variables"))
-				Expect(image.Buildpacks[9].Layers["environment-variables"].Metadata["variables"]).To(Equal(map[string]interface{}{"SOME_VARIABLE": "some-value"}))
+				Expect(image.Buildpacks[10].Key).To(Equal("paketo-buildpacks/environment-variables"))
+				Expect(image.Buildpacks[10].Layers["environment-variables"].Metadata["variables"]).To(Equal(map[string]interface{}{"SOME_VARIABLE": "some-value"}))
 				Expect(image.Labels["some-label"]).To(Equal("some-value"))
 				Expect(image.Buildpacks[4].Key).To(Equal("paketo-buildpacks/node-module-bom"))
 
