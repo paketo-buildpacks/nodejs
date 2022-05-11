@@ -3,43 +3,43 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/node-engine:0.12.3"
+  uri = "urn:cnb:registry:paketo-buildpacks/node-engine@0.12.3"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/node-start:0.8.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/node-start@0.8.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/npm-install:0.9.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/npm-install@0.9.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/npm-start:0.9.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/npm-start@0.9.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/yarn-install:0.9.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/yarn-install@0.9.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/yarn:0.6.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/yarn@0.6.1"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/yarn-start:0.8.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/yarn-start@0.8.0"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/procfile:5.1.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.1.1"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/environment-variables:4.1.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/environment-variables@4.1.1"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/image-labels:4.1.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/image-labels@4.1.1"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/ca-certificates:3.2.2"
+  uri = "urn:cnb:registry:paketo-buildpacks/ca-certificates@3.2.2"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/node-run-script:0.3.3"
+  uri = "urn:cnb:registry:paketo-buildpacks/node-run-script@0.3.3"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/node-module-bom:0.2.4"
+  uri = "urn:cnb:registry:paketo-buildpacks/node-module-bom@0.2.4"
 
 [[dependencies]]
-  uri = "docker://gcr.io/paketo-buildpacks/watchexec:2.4.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/watchexec@2.4.0"
