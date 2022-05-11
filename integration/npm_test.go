@@ -5,7 +5,6 @@ import (
 	"crypto/x509"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -311,7 +310,7 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 				source, err = occam.Source(filepath.Join("testdata", "ca_cert_apps"))
 				Expect(err).NotTo(HaveOccurred())
 
-				caCert, err := ioutil.ReadFile(fmt.Sprintf("%s/client-certs/ca.pem", source))
+				caCert, err := os.ReadFile(fmt.Sprintf("%s/client-certs/ca.pem", source))
 				Expect(err).ToNot(HaveOccurred())
 
 				caCertPool := x509.NewCertPool()

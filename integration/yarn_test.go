@@ -4,7 +4,7 @@ import (
 	"crypto/tls"
 	"crypto/x509"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -285,7 +285,7 @@ func testYarn(t *testing.T, context spec.G, it spec.S) {
 				source, err = occam.Source(filepath.Join("testdata", "ca_cert_apps"))
 				Expect(err).NotTo(HaveOccurred())
 
-				caCert, err := ioutil.ReadFile(fmt.Sprintf("%s/client-certs/ca.pem", source))
+				caCert, err := os.ReadFile(fmt.Sprintf("%s/client-certs/ca.pem", source))
 				Expect(err).ToNot(HaveOccurred())
 
 				caCertPool := x509.NewCertPool()
@@ -356,7 +356,7 @@ func testYarn(t *testing.T, context spec.G, it spec.S) {
 
 				Expect(response.StatusCode).To(Equal(http.StatusOK))
 
-				content, err := ioutil.ReadAll(response.Body)
+				content, err := io.ReadAll(response.Body)
 				Expect(err).NotTo(HaveOccurred())
 				Expect(string(content)).To(ContainSubstring("Hello, World!"))
 			})
