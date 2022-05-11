@@ -67,6 +67,7 @@ func testNodeStart(t *testing.T, context spec.G, it spec.S) {
 			Expect(logs).To(ContainLines(ContainSubstring("Node Engine Buildpack")))
 			Expect(logs).To(ContainLines(ContainSubstring("Node Start Buildpack")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Procfile Buildpack")))
+			Expect(logs).NotTo(ContainLines(ContainSubstring("Datadog Buildpack")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Environment Variables Buildpack")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Image Labels Buildpack")))
 
@@ -101,6 +102,7 @@ func testNodeStart(t *testing.T, context spec.G, it spec.S) {
 						"BPE_SOME_VARIABLE":      "some-value",
 						"BP_IMAGE_LABELS":        "some-label=some-value",
 						"BP_LIVE_RELOAD_ENABLED": "true",
+						"BP_DATADOG_ENABLED":     "true",
 					}).
 					Execute(name, source)
 				Expect(err).NotTo(HaveOccurred())
@@ -108,12 +110,13 @@ func testNodeStart(t *testing.T, context spec.G, it spec.S) {
 				Expect(logs).To(ContainLines(ContainSubstring("Node Engine Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Node Start Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Procfile Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("Datadog Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Environment Variables Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Image Labels Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Watchexec Buildpack")))
 
-				Expect(image.Buildpacks[5].Key).To(Equal("paketo-buildpacks/environment-variables"))
-				Expect(image.Buildpacks[5].Layers["environment-variables"].Metadata["variables"]).To(Equal(map[string]interface{}{"SOME_VARIABLE": "some-value"}))
+				Expect(image.Buildpacks[6].Key).To(Equal("paketo-buildpacks/environment-variables"))
+				Expect(image.Buildpacks[6].Layers["environment-variables"].Metadata["variables"]).To(Equal(map[string]interface{}{"SOME_VARIABLE": "some-value"}))
 				Expect(image.Labels["some-label"]).To(Equal("some-value"))
 
 				container, err = docker.Container.Run.
@@ -162,6 +165,7 @@ func testNodeStart(t *testing.T, context spec.G, it spec.S) {
 				Expect(logs).To(ContainLines(ContainSubstring("Node Module Bill of Materials Generator Buildpack")))
 				Expect(logs).To(ContainLines(ContainSubstring("Node Start Buildpack")))
 				Expect(logs).NotTo(ContainLines(ContainSubstring("Procfile Buildpack")))
+				Expect(logs).NotTo(ContainLines(ContainSubstring("Datadog Buildpack")))
 				Expect(logs).NotTo(ContainLines(ContainSubstring("Environment Variables Buildpack")))
 				Expect(logs).NotTo(ContainLines(ContainSubstring("Image Labels Buildpack")))
 
