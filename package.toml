@@ -24,16 +24,16 @@
   uri = "urn:cnb:registry:paketo-buildpacks/yarn-start@0.8.0"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.1.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.1.2"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/environment-variables@4.1.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/environment-variables@4.1.2"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/image-labels@4.1.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/image-labels@4.1.2"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/ca-certificates@3.2.2"
+  uri = "urn:cnb:registry:paketo-buildpacks/ca-certificates@3.2.3"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/node-run-script@0.3.3"
@@ -42,7 +42,7 @@
   uri = "urn:cnb:registry:paketo-buildpacks/node-module-bom@0.2.4"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/watchexec@2.4.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/watchexec@2.4.1"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/datadog@1.5.0"
