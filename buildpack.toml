@@ -17,7 +17,7 @@ api = "0.6"
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.2.3"
+    version = "3.2.4"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
@@ -64,7 +64,7 @@ api = "0.6"
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "1.6.0"
+    version = "1.7.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
@@ -81,7 +81,7 @@ api = "0.6"
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.2.3"
+    version = "3.2.4"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
@@ -124,7 +124,7 @@ api = "0.6"
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "1.6.0"
+    version = "1.7.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
@@ -141,7 +141,7 @@ api = "0.6"
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.2.3"
+    version = "3.2.4"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
@@ -169,7 +169,7 @@ api = "0.6"
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "1.6.0"
+    version = "1.7.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"

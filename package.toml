@@ -33,7 +33,7 @@
   uri = "urn:cnb:registry:paketo-buildpacks/image-labels@4.1.2"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/ca-certificates@3.2.3"
+  uri = "urn:cnb:registry:paketo-buildpacks/ca-certificates@3.2.4"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/node-run-script@0.3.3"
@@ -45,4 +45,4 @@
   uri = "urn:cnb:registry:paketo-buildpacks/watchexec@2.4.1"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/datadog@1.6.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/datadog@1.7.0"
