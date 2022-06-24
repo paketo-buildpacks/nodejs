@@ -42,7 +42,7 @@
   uri = "urn:cnb:registry:paketo-buildpacks/node-module-bom@0.2.4"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/watchexec@2.4.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/watchexec@2.5.0"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/datadog@1.7.0"
