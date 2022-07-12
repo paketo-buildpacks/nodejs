@@ -24,7 +24,7 @@
   uri = "urn:cnb:registry:paketo-buildpacks/yarn-start@0.8.1"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.1.2"
+  uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.2.0"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/environment-variables@4.1.2"

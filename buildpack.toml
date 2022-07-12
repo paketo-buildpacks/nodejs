@@ -59,7 +59,7 @@ api = "0.6"
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.1.2"
+    version = "5.2.0"
 
   [[order.group]]
     id = "paketo-buildpacks/datadog"
@@ -119,7 +119,7 @@ api = "0.6"
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.1.2"
+    version = "5.2.0"
 
   [[order.group]]
     id = "paketo-buildpacks/datadog"
@@ -164,7 +164,7 @@ api = "0.6"
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.1.2"
+    version = "5.2.0"
 
   [[order.group]]
     id = "paketo-buildpacks/datadog"
