@@ -9,19 +9,19 @@
   uri = "urn:cnb:registry:paketo-buildpacks/node-start@0.8.2"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/npm-install@0.10.2"
+  uri = "urn:cnb:registry:paketo-buildpacks/npm-install@0.10.3"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/npm-start@0.9.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/npm-start@0.9.2"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/yarn-install@0.10.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/yarn-install@0.10.2"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/yarn@0.8.0"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/yarn-start@0.8.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/yarn-start@0.8.2"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.2.1"
@@ -36,7 +36,7 @@
   uri = "urn:cnb:registry:paketo-buildpacks/ca-certificates@3.2.5"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/node-run-script@0.4.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/node-run-script@0.4.1"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/node-module-bom@0.3.0"
