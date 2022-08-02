@@ -49,7 +49,7 @@ api = "0.6"
   [[order.group]]
     id = "paketo-buildpacks/node-start"
     optional = true
-    version = "0.8.1"
+    version = "0.8.2"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-start"
@@ -109,7 +109,7 @@ api = "0.6"
   [[order.group]]
     id = "paketo-buildpacks/node-start"
     optional = true
-    version = "0.8.1"
+    version = "0.8.2"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-start"
@@ -159,7 +159,7 @@ api = "0.6"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
-    version = "0.8.1"
+    version = "0.8.2"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
