@@ -27,7 +27,8 @@ func TestIntegration(t *testing.T) {
 
 	suite := spec.New("Integration", spec.Parallel(), spec.Report(report.Terminal{}))
 	suite("NPM", testNPM)
-	suite("Yarn", testYarn)
 	suite("NodeStart", testNodeStart)
+	suite("ReproducibleBuilds", testReproducibleBuilds)
+	suite("Yarn", testYarn)
 	suite.Run(t)
 }
