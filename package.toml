@@ -6,13 +6,13 @@
   uri = "urn:cnb:registry:paketo-buildpacks/node-engine@0.15.0"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/node-start@0.8.2"
+  uri = "urn:cnb:registry:paketo-buildpacks/node-start@0.8.3"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/npm-install@0.10.4"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/npm-start@0.9.2"
+  uri = "urn:cnb:registry:paketo-buildpacks/npm-start@0.9.3"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/yarn-install@0.10.3"
@@ -36,10 +36,10 @@
   uri = "urn:cnb:registry:paketo-buildpacks/ca-certificates@3.2.5"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/node-run-script@0.4.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/node-run-script@0.4.2"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/node-module-bom@0.4.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/node-module-bom@0.4.1"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/watchexec@2.5.4"
