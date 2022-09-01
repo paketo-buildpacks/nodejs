@@ -6,6 +6,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/paketo-buildpacks/occam"
 	"github.com/sclevine/spec"
 	"github.com/sclevine/spec/report"
 
@@ -15,6 +16,9 @@ import (
 var nodeBuildpack string
 
 func TestIntegration(t *testing.T) {
+	var pack occam.Pack
+	pack = occam.NewPack()
+
 	Expect := NewWithT(t).Expect
 
 	output, err := exec.Command("bash", "-c", "../scripts/package.sh --version 1.2.3").CombinedOutput()
@@ -31,4 +35,11 @@ func TestIntegration(t *testing.T) {
 	suite("ReproducibleBuilds", testReproducibleBuilds)
 	suite("Yarn", testYarn)
 	suite.Run(t)
+
+	builder, _ := pack.Builder.Inspect.Execute()
+	if builder.BuilderName != "paketobuildpacks/builder-jammy-buildpackless-base" {
+
+		spec.Run(t, "StackUpgrades", testStackUpgrades, spec.Report(report.Terminal{}))
+
+	}
 }
