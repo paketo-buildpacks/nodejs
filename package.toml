@@ -3,46 +3,46 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/node-engine@0.15.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/node-engine@0.16.0"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/node-start@0.8.3"
+  uri = "urn:cnb:registry:paketo-buildpacks/node-start@0.8.4"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/npm-install@0.10.4"
+  uri = "urn:cnb:registry:paketo-buildpacks/npm-install@0.10.5"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/npm-start@0.9.3"
+  uri = "urn:cnb:registry:paketo-buildpacks/npm-start@0.10.1"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/yarn-install@0.10.3"
+  uri = "urn:cnb:registry:paketo-buildpacks/yarn-install@0.10.4"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/yarn@0.8.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/yarn@0.8.2"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/yarn-start@0.8.3"
+  uri = "urn:cnb:registry:paketo-buildpacks/yarn-start@0.8.4"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.3.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.4.0"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/environment-variables@4.2.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/environment-variables@4.3.0"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/image-labels@4.2.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/image-labels@4.3.0"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/ca-certificates@3.3.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/ca-certificates@3.4.0"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/node-run-script@0.4.2"
+  uri = "urn:cnb:registry:paketo-buildpacks/node-run-script@0.4.3"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/node-module-bom@0.4.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/node-module-bom@0.4.2"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/watchexec@2.6.0"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/datadog@2.0.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/datadog@2.1.0"
