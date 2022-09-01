@@ -1,4 +1,4 @@
-# Node.js Paketo Buildpack
+# Paketo Buildpack for Node.js
 
 ## `gcr.io/paketo-buildpacks/nodejs`
 
