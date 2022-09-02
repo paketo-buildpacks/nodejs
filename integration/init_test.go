@@ -16,8 +16,7 @@ import (
 var nodeBuildpack string
 
 func TestIntegration(t *testing.T) {
-	var pack occam.Pack
-	pack = occam.NewPack()
+	pack := occam.NewPack()
 
 	Expect := NewWithT(t).Expect
 
