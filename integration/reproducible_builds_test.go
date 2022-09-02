@@ -97,7 +97,7 @@ func testReproducibleBuilds(t *testing.T, context spec.G, it spec.S) {
 			Expect(os.RemoveAll(source)).To(Succeed())
 		})
 
-		it("creates a two identical images from the same input", func() {
+		it("creates two identical images from the same input", func() {
 			var err error
 			var logs fmt.Stringer
 			image, logs, err = pack.WithNoColor().Build.
