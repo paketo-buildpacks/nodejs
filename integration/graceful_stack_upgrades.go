@@ -23,6 +23,9 @@ func testStackUpgrades(t *testing.T, context spec.G, it spec.S) {
 	it.Before(func() {
 		pack = occam.NewPack()
 		docker = occam.NewDocker()
+
+		Expect(docker.Pull.Execute("paketobuildpacks/builder-jammy-buildpackless-base")).To(Succeed())
+
 	})
 
 	context("when building a node app that does not use a package manager and stacks change between builds", func() {
