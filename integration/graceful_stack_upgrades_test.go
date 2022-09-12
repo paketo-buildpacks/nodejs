@@ -25,6 +25,7 @@ func testStackUpgrades(t *testing.T, context spec.G, it spec.S) {
 		docker = occam.NewDocker()
 
 		Expect(docker.Pull.Execute("paketobuildpacks/builder-jammy-buildpackless-base")).To(Succeed())
+		Expect(docker.Pull.Execute("paketobuildpacks/run-jammy-base")).To(Succeed())
 
 	})
 
