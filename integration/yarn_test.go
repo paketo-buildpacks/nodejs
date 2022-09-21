@@ -240,7 +240,7 @@ func testYarn(t *testing.T, context spec.G, it spec.S) {
 					Execute(name, source)
 				Expect(err).NotTo(HaveOccurred())
 
-				Expect(logs).To(ContainLines(ContainSubstring("Watchexec Buildpack")))
+				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Watchexec")))
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Node Engine")))
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Yarn")))
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Yarn Install")))
