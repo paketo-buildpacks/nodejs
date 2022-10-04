@@ -15,7 +15,7 @@
   uri = "urn:cnb:registry:paketo-buildpacks/npm-start@0.10.2"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/yarn-install@0.10.6"
+  uri = "urn:cnb:registry:paketo-buildpacks/yarn-install@0.10.7"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/yarn@0.8.4"
