@@ -15,7 +15,7 @@
   uri = "urn:cnb:registry:paketo-buildpacks/npm-start@0.10.3"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/yarn-install@0.10.8"
+  uri = "urn:cnb:registry:paketo-buildpacks/yarn-install@0.10.9"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/yarn@0.8.5"
@@ -36,7 +36,7 @@
   uri = "urn:cnb:registry:paketo-buildpacks/ca-certificates@3.4.0"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/node-run-script@0.5.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/node-run-script@0.5.2"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/node-module-bom@0.4.3"
