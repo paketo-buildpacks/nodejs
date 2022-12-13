@@ -66,15 +66,12 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 
 			Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Node Engine")))
 			Expect(logs).To(ContainLines(ContainSubstring("Buildpack for NPM Install")))
-			Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Node Module Bill of Materials Generator")))
 			Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Node Start")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for NPM Start")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Procfile")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Datadog")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Environment Variables")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Image Labels")))
-
-			Expect(image.Buildpacks[3].Key).To(Equal("paketo-buildpacks/node-module-bom"))
 
 			container, err = docker.Container.Run.
 				WithEnv(map[string]string{"PORT": "8080"}).
@@ -133,15 +130,12 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 
 			Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Node Engine")))
 			Expect(logs).To(ContainLines(ContainSubstring("Buildpack for NPM Install")))
-			Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Node Module Bill of Materials Generator")))
 			Expect(logs).To(ContainLines(ContainSubstring("Buildpack for NPM Start")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Node Start")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Procfile")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Datadog")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Environment Variables")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Image Labels")))
-
-			Expect(image.Buildpacks[3].Key).To(Equal("paketo-buildpacks/node-module-bom"))
 
 			container, err = docker.Container.Run.
 				WithEnv(map[string]string{"PORT": "8080"}).
@@ -200,15 +194,12 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 
 			Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Node Engine")))
 			Expect(logs).To(ContainLines(ContainSubstring("Buildpack for NPM Install")))
-			Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Node Module Bill of Materials Generator")))
 			Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Node Start")))
 			Expect(logs).To(ContainLines(ContainSubstring("Buildpack for NPM Start")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Procfile")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Datadog")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Environment Variables")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Image Labels")))
-
-			Expect(image.Buildpacks[3].Key).To(Equal("paketo-buildpacks/node-module-bom"))
 
 			container, err = docker.Container.Run.
 				WithEnv(map[string]string{"PORT": "8080"}).
@@ -261,7 +252,6 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Node Engine")))
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Node Start")))
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for NPM Install")))
-				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Node Module Bill of Materials Generator")))
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for NPM Start")))
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Procfile")))
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Datadog")))
@@ -269,10 +259,11 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Image Labels")))
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Node Run Script")))
 
-				Expect(image.Buildpacks[10].Key).To(Equal("paketo-buildpacks/environment-variables"))
-				Expect(image.Buildpacks[10].Layers["environment-variables"].Metadata["variables"]).To(Equal(map[string]interface{}{"SOME_VARIABLE": "some-value"}))
+				environmentVariables, err := image.BuildpackForKey("paketo-buildpacks/environment-variables")
+				Expect(err).NotTo(HaveOccurred())
+				Expect(environmentVariables.Layers["environment-variables"].Metadata["variables"]).To(Equal(map[string]interface{}{"SOME_VARIABLE": "some-value"}))
+
 				Expect(image.Labels["some-label"]).To(Equal("some-value"))
-				Expect(image.Buildpacks[4].Key).To(Equal("paketo-buildpacks/node-module-bom"))
 
 				container, err = docker.Container.Run.
 					WithEnv(map[string]string{"PORT": "8080"}).
@@ -348,9 +339,7 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Node Engine")))
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Node Start")))
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for NPM Install")))
-				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Node Module Bill of Materials Generator")))
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for NPM Start")))
-				Expect(image.Buildpacks[3].Key).To(Equal("paketo-buildpacks/node-module-bom"))
 
 				// NOTE: NODE_OPTIONS="--use-openssl-ca" is NOT required since the node binary is compiled with `--openssl-use-def-ca-store`
 				container, err = docker.Container.Run.
