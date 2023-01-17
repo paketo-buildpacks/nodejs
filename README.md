@@ -21,6 +21,8 @@ Usage examples can be found in the
 [`samples` repository under the `nodejs` directory](https://github.com/paketo-buildpacks/samples/tree/main/nodejs).
 
 #### The Node.js buildpack is compatible with the following builder(s):
+- [Paketo Jammy Full Builder](https://github.com/paketo-buildpacks/builder-jammy-full)
+- [Paketo Jammy Base Builder](https://github.com/paketo-buildpacks/builder-jammy-base)
 - [Paketo Full Builder](https://github.com/paketo-buildpacks/full-builder)
 - [Paketo Base Builder](https://github.com/paketo-buildpacks/base-builder) (for apps which do not leverage common C libraries)
 
