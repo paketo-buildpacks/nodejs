@@ -59,7 +59,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "3.6.0"
+    version = "3.7.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
@@ -114,7 +114,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "3.6.0"
+    version = "3.7.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
@@ -154,7 +154,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "3.6.0"
+    version = "3.7.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
