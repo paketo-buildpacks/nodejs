@@ -39,17 +39,17 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
     optional = true
-    version = "1.0.3"
+    version = "1.0.4"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
     optional = true
-    version = "1.0.4"
+    version = "1.0.5"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-start"
     optional = true
-    version = "1.0.4"
+    version = "1.0.5"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -89,22 +89,22 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-install"
-    version = "1.0.4"
+    version = "1.0.5"
 
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
     optional = true
-    version = "1.0.3"
+    version = "1.0.4"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
     optional = true
-    version = "1.0.4"
+    version = "1.0.5"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-start"
     optional = true
-    version = "1.0.4"
+    version = "1.0.5"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -144,7 +144,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
-    version = "1.0.4"
+    version = "1.0.5"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
