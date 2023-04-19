@@ -12,16 +12,16 @@
   uri = "urn:cnb:registry:paketo-buildpacks/npm-install@1.0.6"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/npm-start@1.0.6"
+  uri = "urn:cnb:registry:paketo-buildpacks/npm-start@1.0.7"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/yarn-install@1.0.6"
+  uri = "urn:cnb:registry:paketo-buildpacks/yarn-install@1.1.0"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/yarn@1.1.5"
+  uri = "urn:cnb:registry:paketo-buildpacks/yarn@1.1.6"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/yarn-start@1.0.5"
+  uri = "urn:cnb:registry:paketo-buildpacks/yarn-start@1.0.6"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.6.1"
@@ -42,4 +42,4 @@
   uri = "urn:cnb:registry:paketo-buildpacks/watchexec@2.8.1"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/datadog@3.7.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/datadog@3.8.0"

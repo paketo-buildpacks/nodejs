@@ -30,11 +30,11 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn"
-    version = "1.1.5"
+    version = "1.1.6"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-install"
-    version = "1.0.6"
+    version = "1.1.0"
 
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
@@ -49,7 +49,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/yarn-start"
     optional = true
-    version = "1.0.5"
+    version = "1.0.6"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -59,7 +59,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "3.7.0"
+    version = "3.8.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
@@ -104,7 +104,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/npm-start"
     optional = true
-    version = "1.0.6"
+    version = "1.0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -114,7 +114,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "3.7.0"
+    version = "3.8.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
@@ -154,7 +154,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "3.7.0"
+    version = "3.8.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
