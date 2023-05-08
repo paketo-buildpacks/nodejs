@@ -3,25 +3,25 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/node-engine@1.5.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/node-engine@1.5.1"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/node-start@1.0.7"
+  uri = "urn:cnb:registry:paketo-buildpacks/node-start@1.0.8"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/npm-install@1.1.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/npm-install@1.1.1"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/npm-start@1.0.7"
+  uri = "urn:cnb:registry:paketo-buildpacks/npm-start@1.0.8"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/yarn-install@1.1.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/yarn-install@1.1.1"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/yarn@1.1.6"
+  uri = "urn:cnb:registry:paketo-buildpacks/yarn@1.1.7"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/yarn-start@1.0.6"
+  uri = "urn:cnb:registry:paketo-buildpacks/yarn-start@1.0.8"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.6.1"
@@ -36,10 +36,10 @@
   uri = "urn:cnb:registry:paketo-buildpacks/ca-certificates@3.6.1"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/node-run-script@1.0.5"
+  uri = "urn:cnb:registry:paketo-buildpacks/node-run-script@1.0.7"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/watchexec@2.8.1"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/datadog@3.6.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/datadog@3.9.0"
