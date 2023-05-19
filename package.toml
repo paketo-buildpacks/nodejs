@@ -24,13 +24,13 @@
   uri = "urn:cnb:registry:paketo-buildpacks/yarn-start@1.0.8"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.6.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.6.2"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/environment-variables@4.5.1"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/image-labels@4.4.2"
+  uri = "urn:cnb:registry:paketo-buildpacks/image-labels@4.5.0"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/ca-certificates@3.6.1"
