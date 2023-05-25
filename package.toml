@@ -9,7 +9,7 @@
   uri = "urn:cnb:registry:paketo-buildpacks/node-start@1.0.9"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/npm-install@1.1.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/npm-install@1.1.2"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/npm-start@1.0.9"
