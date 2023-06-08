@@ -22,7 +22,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "2.8.1"
+    version = "2.8.2"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
@@ -59,7 +59,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "3.11.1"
+    version = "3.12.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
@@ -69,7 +69,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.5.0"
+    version = "4.5.1"
 
 [[order]]
 
@@ -81,7 +81,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "2.8.1"
+    version = "2.8.2"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
@@ -114,7 +114,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "3.11.1"
+    version = "3.12.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
@@ -124,7 +124,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.5.0"
+    version = "4.5.1"
 
 [[order]]
 
@@ -136,7 +136,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "2.8.1"
+    version = "2.8.2"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
@@ -154,7 +154,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "3.11.1"
+    version = "3.12.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
@@ -164,4 +164,4 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.5.0"
+    version = "4.5.1"
