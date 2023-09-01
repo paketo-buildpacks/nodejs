@@ -26,11 +26,11 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "1.8.0"
+    version = "1.9.0"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn"
-    version = "1.1.10"
+    version = "1.1.11"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-install"
@@ -85,7 +85,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "1.8.0"
+    version = "1.9.0"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-install"
@@ -140,7 +140,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "1.8.0"
+    version = "1.9.0"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
