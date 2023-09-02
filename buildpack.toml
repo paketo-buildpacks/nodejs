@@ -39,7 +39,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
     optional = true
-    version = "1.0.11"
+    version = "1.0.12"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
@@ -94,7 +94,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
     optional = true
-    version = "1.0.11"
+    version = "1.0.12"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
