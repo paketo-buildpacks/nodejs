@@ -6,7 +6,7 @@
   uri = "urn:cnb:registry:paketo-buildpacks/node-engine@3.0.0"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/node-start@1.1.2"
+  uri = "urn:cnb:registry:paketo-buildpacks/node-start@1.1.3"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/npm-install@1.3.0"
@@ -15,7 +15,7 @@
   uri = "urn:cnb:registry:paketo-buildpacks/npm-start@1.0.14"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/yarn-install@1.2.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/yarn-install@1.2.2"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/yarn@1.1.11"
