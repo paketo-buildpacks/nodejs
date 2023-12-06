@@ -24,7 +24,13 @@ func testNodeStart(t *testing.T, context spec.G, it spec.S) {
 
 		pack   occam.Pack
 		docker occam.Docker
+
+		pullPolicy = "never"
 	)
+
+	if settings.Extensions.UbiNodejsExtension.Online != "" {
+		pullPolicy = "always"
+	}
 
 	it.Before(func() {
 		pack = occam.NewPack()
@@ -59,8 +65,9 @@ func testNodeStart(t *testing.T, context spec.G, it spec.S) {
 			var err error
 			var logs fmt.Stringer
 			image, logs, err = pack.WithNoColor().Build.
+				WithExtensions(settings.Extensions.UbiNodejsExtension.Online).
 				WithBuildpacks(nodeBuildpack).
-				WithPullPolicy("never").
+				WithPullPolicy(pullPolicy).
 				Execute(name, source)
 			Expect(err).NotTo(HaveOccurred())
 
@@ -96,8 +103,9 @@ func testNodeStart(t *testing.T, context spec.G, it spec.S) {
 				var err error
 				var logs fmt.Stringer
 				image, logs, err = pack.WithNoColor().Build.
+					WithExtensions(settings.Extensions.UbiNodejsExtension.Online).
 					WithBuildpacks(nodeBuildpack).
-					WithPullPolicy("never").
+					WithPullPolicy(pullPolicy).
 					WithEnv(map[string]string{
 						"BPE_SOME_VARIABLE":      "some-value",
 						"BP_IMAGE_LABELS":        "some-label=some-value",
@@ -158,8 +166,9 @@ func testNodeStart(t *testing.T, context spec.G, it spec.S) {
 				var err error
 				var logs fmt.Stringer
 				image, logs, err = pack.WithNoColor().Build.
+					WithExtensions(settings.Extensions.UbiNodejsExtension.Online).
 					WithBuildpacks(nodeBuildpack).
-					WithPullPolicy("never").
+					WithPullPolicy(pullPolicy).
 					Execute(name, source)
 				Expect(err).NotTo(HaveOccurred())
 
@@ -217,8 +226,9 @@ func testNodeStart(t *testing.T, context spec.G, it spec.S) {
 				var err error
 				var logs fmt.Stringer
 				image, logs, err = pack.WithNoColor().Build.
+					WithExtensions(settings.Extensions.UbiNodejsExtension.Online).
 					WithBuildpacks(nodeBuildpack).
-					WithPullPolicy("never").
+					WithPullPolicy(pullPolicy).
 					Execute(name, filepath.Join(source, "node_server"))
 				Expect(err).NotTo(HaveOccurred())
 
