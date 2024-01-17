@@ -17,16 +17,16 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.6.6"
+    version = "3.6.7"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "2.8.6"
+    version = "2.8.7"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "3.0.1"
+    version = "3.1.0"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn"
@@ -54,12 +54,12 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.6.7"
+    version = "5.6.8"
 
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "4.3.0"
+    version = "4.8.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
@@ -76,16 +76,16 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.6.6"
+    version = "3.6.7"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "2.8.6"
+    version = "2.8.7"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "3.0.1"
+    version = "3.1.0"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-install"
@@ -109,12 +109,12 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.6.7"
+    version = "5.6.8"
 
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "4.3.0"
+    version = "4.8.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
@@ -131,16 +131,16 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.6.6"
+    version = "3.6.7"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "2.8.6"
+    version = "2.8.7"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "3.0.1"
+    version = "3.1.0"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
@@ -149,12 +149,12 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.6.7"
+    version = "5.6.8"
 
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "4.3.0"
+    version = "4.8.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
