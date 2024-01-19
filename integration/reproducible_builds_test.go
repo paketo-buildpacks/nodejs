@@ -18,7 +18,13 @@ func testReproducibleBuilds(t *testing.T, context spec.G, it spec.S) {
 
 		pack   occam.Pack
 		docker occam.Docker
+
+		pullPolicy = "never"
 	)
+
+	if settings.Extensions.UbiNodejsExtension.Online != "" {
+		pullPolicy = "always"
+	}
 
 	it.Before(func() {
 		pack = occam.NewPack()
@@ -52,8 +58,9 @@ func testReproducibleBuilds(t *testing.T, context spec.G, it spec.S) {
 			var err error
 			var logs fmt.Stringer
 			image, logs, err = pack.WithNoColor().Build.
+				WithExtensions(settings.Extensions.UbiNodejsExtension.Online).
 				WithBuildpacks(nodeBuildpack).
-				WithPullPolicy("never").
+				WithPullPolicy(pullPolicy).
 				Execute(name, source)
 			Expect(err).NotTo(HaveOccurred(), logs.String())
 
@@ -64,8 +71,9 @@ func testReproducibleBuilds(t *testing.T, context spec.G, it spec.S) {
 			Expect(docker.Volume.Remove.Execute(occam.CacheVolumeNames(name))).To(Succeed())
 
 			image, logs, err = pack.WithNoColor().Build.
+				WithExtensions(settings.Extensions.UbiNodejsExtension.Online).
 				WithBuildpacks(nodeBuildpack).
-				WithPullPolicy("never").
+				WithPullPolicy(pullPolicy).
 				WithClearCache().
 				Execute(name, source)
 			Expect(err).NotTo(HaveOccurred(), logs.String())
@@ -101,8 +109,9 @@ func testReproducibleBuilds(t *testing.T, context spec.G, it spec.S) {
 			var err error
 			var logs fmt.Stringer
 			image, logs, err = pack.WithNoColor().Build.
+				WithExtensions(settings.Extensions.UbiNodejsExtension.Online).
 				WithBuildpacks(nodeBuildpack).
-				WithPullPolicy("never").
+				WithPullPolicy(pullPolicy).
 				Execute(name, source)
 			Expect(err).NotTo(HaveOccurred(), logs.String())
 
@@ -113,8 +122,9 @@ func testReproducibleBuilds(t *testing.T, context spec.G, it spec.S) {
 			Expect(docker.Volume.Remove.Execute(occam.CacheVolumeNames(name))).To(Succeed())
 
 			image, logs, err = pack.WithNoColor().Build.
+				WithExtensions(settings.Extensions.UbiNodejsExtension.Online).
 				WithBuildpacks(nodeBuildpack).
-				WithPullPolicy("never").
+				WithPullPolicy(pullPolicy).
 				WithClearCache().
 				Execute(name, source)
 			Expect(err).NotTo(HaveOccurred(), logs.String())
@@ -150,8 +160,9 @@ func testReproducibleBuilds(t *testing.T, context spec.G, it spec.S) {
 			var err error
 			var logs fmt.Stringer
 			image, logs, err = pack.WithNoColor().Build.
+				WithExtensions(settings.Extensions.UbiNodejsExtension.Online).
 				WithBuildpacks(nodeBuildpack).
-				WithPullPolicy("never").
+				WithPullPolicy(pullPolicy).
 				Execute(name, source)
 			Expect(err).NotTo(HaveOccurred(), logs.String())
 
@@ -162,8 +173,9 @@ func testReproducibleBuilds(t *testing.T, context spec.G, it spec.S) {
 			Expect(docker.Volume.Remove.Execute(occam.CacheVolumeNames(name))).To(Succeed())
 
 			image, logs, err = pack.WithNoColor().Build.
+				WithExtensions(settings.Extensions.UbiNodejsExtension.Online).
 				WithBuildpacks(nodeBuildpack).
-				WithPullPolicy("never").
+				WithPullPolicy(pullPolicy).
 				WithClearCache().
 				Execute(name, source)
 			Expect(err).NotTo(HaveOccurred(), logs.String())
