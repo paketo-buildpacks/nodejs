@@ -26,7 +26,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "3.2.1"
+    version = "3.2.2"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn"
@@ -59,7 +59,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "3.6.0"
+    version = "5.2.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
@@ -85,7 +85,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "3.2.1"
+    version = "3.2.2"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-install"
@@ -114,7 +114,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "3.6.0"
+    version = "5.2.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
@@ -140,7 +140,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "3.2.1"
+    version = "3.2.2"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
@@ -154,7 +154,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "3.6.0"
+    version = "5.2.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
