@@ -139,8 +139,6 @@ function tests::run() {
   util::print::title "Run Buildpack Runtime Integration Tests"
   util::print::info "Using ${1} as builder..."
 
-  pack config experimental true
-
   export CGO_ENABLED=0
   pushd "${BUILDPACKDIR}" > /dev/null
     #shellcheck disable=SC2068
