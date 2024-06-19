@@ -59,7 +59,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "5.13.0"
+    version = "3.6.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
