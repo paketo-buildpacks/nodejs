@@ -26,11 +26,11 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "4.1.5"
+    version = "4.1.6"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn"
-    version = "1.3.10"
+    version = "1.3.11"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-install"
@@ -39,12 +39,12 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
     optional = true
-    version = "1.0.23"
+    version = "1.0.24"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
     optional = true
-    version = "2.0.5"
+    version = "2.0.6"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-start"
@@ -59,7 +59,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "5.18.0"
+    version = "5.19.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
@@ -85,26 +85,26 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "4.1.5"
+    version = "4.1.6"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-install"
-    version = "1.4.7"
+    version = "1.4.8"
 
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
     optional = true
-    version = "1.0.23"
+    version = "1.0.24"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
     optional = true
-    version = "2.0.5"
+    version = "2.0.6"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-start"
     optional = true
-    version = "2.0.5"
+    version = "2.0.6"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -114,7 +114,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "5.18.0"
+    version = "5.19.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
@@ -140,11 +140,11 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "4.1.5"
+    version = "4.1.6"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
-    version = "2.0.5"
+    version = "2.0.6"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -154,7 +154,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/datadog"
     optional = true
-    version = "5.18.0"
+    version = "5.19.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
