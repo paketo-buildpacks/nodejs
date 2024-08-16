@@ -24,6 +24,9 @@
   uri = "urn:cnb:registry:paketo-buildpacks/yarn-start@2.0.10"
 
 [[dependencies]]
+  uri = "urn:cnb:registry:paketo-buildpacks/cpython@1.13.7"
+
+[[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.9.2"
 
 [[dependencies]]

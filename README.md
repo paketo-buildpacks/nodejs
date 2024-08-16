@@ -27,6 +27,7 @@ Usage examples can be found in the
 - [Paketo Base Builder](https://github.com/paketo-buildpacks/base-builder) (for apps which do not leverage common C libraries)
 
 This buildpack also includes the following utility buildpacks:
+- [cPython CNB](https://github.com/paketo-buildpacks/cpython)
 - [Procfile CNB](https://github.com/paketo-buildpacks/procfile)
 - [Environment Variables CNB](https://github.com/paketo-buildpacks/environment-variables)
 - [Image Labels CNB](https://github.com/paketo-buildpacks/image-labels)
