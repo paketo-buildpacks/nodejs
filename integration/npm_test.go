@@ -76,7 +76,6 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 			Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Node Start")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for NPM Start")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Procfile")))
-			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Datadog")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Environment Variables")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Image Labels")))
 
@@ -141,7 +140,6 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 			Expect(logs).To(ContainLines(ContainSubstring("Buildpack for NPM Start")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Node Start")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Procfile")))
-			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Datadog")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Environment Variables")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Image Labels")))
 
@@ -206,7 +204,6 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 			Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Node Start")))
 			Expect(logs).To(ContainLines(ContainSubstring("Buildpack for NPM Start")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Procfile")))
-			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Datadog")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Environment Variables")))
 			Expect(logs).NotTo(ContainLines(ContainSubstring("Buildpack for Image Labels")))
 
@@ -264,7 +261,6 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for NPM Install")))
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for NPM Start")))
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Procfile")))
-				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Datadog")))
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Environment Variables")))
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Image Labels")))
 				Expect(logs).To(ContainLines(ContainSubstring("Buildpack for Node Run Script")))
