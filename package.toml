@@ -42,4 +42,4 @@
   uri = "urn:cnb:registry:paketo-buildpacks/watchexec@3.2.3"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/datadog@5.20.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/datadog@5.21.0"
