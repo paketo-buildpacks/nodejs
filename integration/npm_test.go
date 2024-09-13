@@ -165,6 +165,57 @@ func testNPM(t *testing.T, context spec.G, it spec.S) {
 		})
 	})
 
+	context("when building a node app that uses npm, has a start script and node-gyp dependency", func() {
+		var (
+			image     occam.Image
+			container occam.Container
+
+			name   string
+			source string
+		)
+
+		it.Before(func() {
+			var err error
+			name, err = occam.RandomName()
+			Expect(err).NotTo(HaveOccurred())
+			source, err = occam.Source(filepath.Join("testdata", "node-gyp"))
+			Expect(err).NotTo(HaveOccurred())
+		})
+
+		it.After(func() {
+			Expect(docker.Container.Remove.Execute(container.ID)).To(Succeed())
+			Expect(docker.Image.Remove.Execute(image.ID)).To(Succeed())
+			Expect(docker.Volume.Remove.Execute(occam.CacheVolumeNames(name))).To(Succeed())
+			Expect(os.RemoveAll(source)).To(Succeed())
+		})
+
+		it("builds a working OCI image for an app ", func() {
+			var err error
+			var logs fmt.Stringer
+			image, logs, _ = pack.WithNoColor().Build.
+				WithExtensions(settings.Extensions.UbiNodejsExtension.Online).
+				WithBuildpacks(nodeBuildpack).
+				WithPullPolicy(pullPolicy).
+				Execute(name, source)
+			Expect(err).NotTo(HaveOccurred())
+
+			Expect(logs).To(ContainLines(ContainSubstring("umpulumpa")))
+
+			container, err = docker.Container.Run.
+				WithEnv(map[string]string{"PORT": "8080"}).
+				WithPublish("8080").
+				WithPublishAll().
+				Execute(image.ID)
+			Expect(err).NotTo(HaveOccurred())
+
+			Eventually(container, "5s").Should(BeAvailable())
+
+			response, err := http.Get(fmt.Sprintf("http://localhost:%s", container.HostPort("8080")))
+			Expect(err).NotTo(HaveOccurred())
+			Expect(response.StatusCode).To(Equal(http.StatusOK))
+		})
+	})
+
 	context("when building a node app that uses npm, has a start script and flat working directory", func() {
 		var (
 			image     occam.Image
