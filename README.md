@@ -43,4 +43,4 @@ Check out the [Paketo Node.js docs](https://paketo.io/docs/buildpacks/language-f
 
 ### Go Module Versioning
 
-Each buildpack is a Go module, and in the case of the Node.js buildpacks, we only maintain and support the latest versions, without providing support for any **previous** `major` or `minor` versions.
+Each buildpack is a Go module, and in the case of the Node.js buildpacks, we only maintain and support the latest versions, without providing support for any **previous** `major` or `minor` versions.  **Further the team does not currently commit to maintain the go major versions to in sync with the Semver versions used to publish releases. Keeping the go major versions up to date with the versions used to publish the buildpacks and consumed in the buildpack tomls is addhoc and based PRs being sumitted by the community**.
