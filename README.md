@@ -25,8 +25,6 @@ Usage examples can be found in the
 
 - [Paketo Jammy Full Builder](https://github.com/paketo-buildpacks/builder-jammy-full)
 - [Paketo Jammy Base Builder](https://github.com/paketo-buildpacks/builder-jammy-base)
-- [Paketo Full Builder](https://github.com/paketo-buildpacks/full-builder)
-- [Paketo Base Builder](https://github.com/paketo-buildpacks/base-builder) (for apps which do not leverage common C libraries)
 
 This buildpack also includes the following utility buildpacks:
 
