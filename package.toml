@@ -3,25 +3,25 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/node-engine@5.0.3"
+  uri = "urn:cnb:registry:paketo-buildpacks/node-engine@5.0.4"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/node-start@2.1.10"
+  uri = "urn:cnb:registry:paketo-buildpacks/node-start@2.1.11"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/npm-install@1.6.3"
+  uri = "urn:cnb:registry:paketo-buildpacks/npm-install@1.6.4"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/npm-start@2.0.19"
+  uri = "urn:cnb:registry:paketo-buildpacks/npm-start@2.0.20"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/yarn-install@2.1.1"
+  uri = "urn:cnb:registry:paketo-buildpacks/yarn-install@2.1.2"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/yarn@1.3.19"
+  uri = "urn:cnb:registry:paketo-buildpacks/yarn@1.3.20"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/yarn-start@2.0.16"
+  uri = "urn:cnb:registry:paketo-buildpacks/yarn-start@2.0.17"
 
 [[dependencies]]
   uri = "urn:cnb:registry:paketo-buildpacks/procfile@5.10.1"
