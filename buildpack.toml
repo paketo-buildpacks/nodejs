@@ -84,7 +84,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-install"
-    version = "1.6.9"
+    version = "1.8.0"
 
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
