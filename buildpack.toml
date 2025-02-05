@@ -49,7 +49,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/yarn-start"
     optional = true
-    version = "2.0.25"
+    version = "2.0.26"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
