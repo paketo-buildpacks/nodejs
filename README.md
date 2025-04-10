@@ -1,6 +1,6 @@
 # Paketo Buildpack for Node.js
 
-## `gcr.io/paketo-buildpacks/nodejs`
+## `docker.io/paketobuildpacks/nodejs`
 
 The Node.js Paketo Buildpack provides a set of collaborating buildpacks that
 enable the building of a Node.js-based application. These buildpacks include:
