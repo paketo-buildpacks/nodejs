@@ -39,4 +39,4 @@
   uri = "urn:cnb:registry:paketo-buildpacks/node-run-script@2.1.2"
 
 [[dependencies]]
-  uri = "urn:cnb:registry:paketo-buildpacks/watchexec@3.5.0"
+  uri = "urn:cnb:registry:paketo-buildpacks/watchexec@3.5.1"
