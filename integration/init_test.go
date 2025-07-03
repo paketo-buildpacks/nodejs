@@ -47,7 +47,7 @@ func TestIntegration(t *testing.T) {
 
 	buildpackStore := occam.NewBuildpackStore()
 
-	if builder.BuilderName == "paketocommunity/builder-ubi-buildpackless-base" {
+	if builder.BuilderName == "paketobuildpacks/builder-ubi8-buildpackless-base" {
 		settings.Extensions.UbiNodejsExtension.Online, err = buildpackStore.Get.
 			Execute(settings.Config.UbiNodejsExtension)
 		Expect(err).ToNot(HaveOccurred())
