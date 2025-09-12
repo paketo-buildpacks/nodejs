@@ -30,7 +30,7 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn"
-    version = "2.1.3"
+    version = "2.2.0"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-install"
