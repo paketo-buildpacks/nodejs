@@ -5,6 +5,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"strings"
 	"testing"
 	"time"
 
@@ -45,12 +46,8 @@ func TestIntegration(t *testing.T) {
 	Expect(json.NewDecoder(file).Decode(&settings.Config)).To(Succeed())
 	Expect(file.Close()).To(Succeed())
 
-	buildpackStore := occam.NewBuildpackStore()
-
-	if builder.BuilderName == "paketobuildpacks/builder-ubi8-buildpackless-base" || builder.BuilderName == "paketobuildpacks/ubi-9-builder-buildpackless" {
-		settings.Extensions.UbiNodejsExtension.Online, err = buildpackStore.Get.
-			Execute(settings.Config.UbiNodejsExtension)
-		Expect(err).ToNot(HaveOccurred())
+	if strings.Contains(builder.BuilderName, "paketobuildpacks/builder-ubi8-buildpackless-base") || strings.Contains(builder.BuilderName, "paketobuildpacks/ubi-9-builder-buildpackless") {
+		settings.Extensions.UbiNodejsExtension.Online = settings.Config.UbiNodejsExtension
 	}
 
 	nodeBuildpack, err = filepath.Abs("../build/buildpackage.cnb")

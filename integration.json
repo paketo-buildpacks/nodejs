@@ -1,8 +1,8 @@
 {
-  "ubi-nodejs-extension": "github.com/paketo-buildpacks/ubi-nodejs-extension",
+  "ubi-nodejs-extension": "index.docker.io/paketobuildpacks/ubi-nodejs-extension",
   "builders": [
-    "paketobuildpacks/ubi-9-builder-buildpackless",
-    "paketobuildpacks/builder-ubi8-buildpackless-base",
-    "paketobuildpacks/builder-jammy-buildpackless-base"
+    "index.docker.io/paketobuildpacks/ubi-9-builder-buildpackless",
+    "index.docker.io/paketobuildpacks/builder-ubi8-buildpackless-base",
+    "index.docker.io/paketobuildpacks/builder-jammy-buildpackless-base"
   ]
 }
