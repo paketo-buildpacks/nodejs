@@ -3,6 +3,7 @@
   "builders": [
     "index.docker.io/paketobuildpacks/ubi-9-builder-buildpackless",
     "index.docker.io/paketobuildpacks/builder-ubi8-buildpackless-base",
-    "index.docker.io/paketobuildpacks/builder-jammy-buildpackless-base"
+    "index.docker.io/paketobuildpacks/builder-jammy-buildpackless-base",
+    "index.docker.io/paketobuildpacks/ubuntu-noble-builder-buildpackless"
   ]
 }
