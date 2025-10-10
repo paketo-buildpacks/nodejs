@@ -3,7 +3,7 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/cpython:1.17.7"
+  uri = "docker://docker.io/paketobuildpacks/cpython:1.17.8"
 
 [[dependencies]]
   uri = "docker://docker.io/paketobuildpacks/node-engine:7.7.1"

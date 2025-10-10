@@ -27,7 +27,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/cpython"
     optional = true
-    version = "1.17.7"
+    version = "1.17.8"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
@@ -86,7 +86,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/cpython"
     optional = true
-    version = "1.17.7"
+    version = "1.17.8"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
