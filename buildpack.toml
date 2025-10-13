@@ -139,6 +139,11 @@ api = "0.7"
     version = "3.5.4"
 
   [[order.group]]
+    id = "paketo-buildpacks/cpython"
+    optional = true
+    version = "1.17.8"
+
+  [[order.group]]
     id = "paketo-buildpacks/node-engine"
     version = "7.7.1"
 
