@@ -21,7 +21,7 @@
   uri = "docker://docker.io/paketobuildpacks/yarn-install:2.7.0"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/yarn:2.2.19"
+  uri = "docker://docker.io/paketobuildpacks/yarn:2.2.20"
 
 [[dependencies]]
   uri = "docker://docker.io/paketobuildpacks/yarn-start:2.5.4"
