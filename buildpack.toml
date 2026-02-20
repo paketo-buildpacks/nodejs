@@ -17,12 +17,12 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.11.1"
+    version = "3.12.0"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "3.6.2"
+    version = "3.7.0"
 
   [[order.group]]
     id = "paketo-buildpacks/cpython"
@@ -59,29 +59,29 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.12.1"
+    version = "5.13.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "4.10.1"
+    version = "4.11.0"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.11.1"
+    version = "4.12.0"
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.11.1"
+    version = "3.12.0"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "3.6.2"
+    version = "3.7.0"
 
   [[order.group]]
     id = "paketo-buildpacks/cpython"
@@ -114,29 +114,29 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.12.1"
+    version = "5.13.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "4.10.1"
+    version = "4.11.0"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.11.1"
+    version = "4.12.0"
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.11.1"
+    version = "3.12.0"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "3.6.2"
+    version = "3.7.0"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
@@ -149,14 +149,14 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.12.1"
+    version = "5.13.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "4.10.1"
+    version = "4.11.0"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.11.1"
+    version = "4.12.0"
