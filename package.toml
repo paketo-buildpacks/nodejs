@@ -42,7 +42,7 @@
   uri = "docker://docker.io/paketobuildpacks/node-run-script:2.3.23"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/watchexec:3.7.0"
+  uri = "docker://docker.io/paketobuildpacks/watchexec:3.8.0"
 
 [[targets]]
   arch = "amd64"
