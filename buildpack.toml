@@ -27,34 +27,34 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/cpython"
     optional = true
-    version = "1.18.21"
+    version = "1.18.22"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "8.0.10"
+    version = "8.0.11"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn"
-    version = "2.2.26"
+    version = "2.2.27"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-install"
-    version = "2.7.8"
+    version = "2.7.9"
 
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
     optional = true
-    version = "2.3.30"
+    version = "2.3.31"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
     optional = true
-    version = "2.6.12"
+    version = "2.6.13"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-start"
     optional = true
-    version = "2.5.13"
+    version = "2.5.14"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -86,30 +86,30 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/cpython"
     optional = true
-    version = "1.18.21"
+    version = "1.18.22"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "8.0.10"
+    version = "8.0.11"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-install"
-    version = "2.3.13"
+    version = "2.3.14"
 
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
     optional = true
-    version = "2.3.30"
+    version = "2.3.31"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
     optional = true
-    version = "2.6.12"
+    version = "2.6.13"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-start"
     optional = true
-    version = "2.4.13"
+    version = "2.4.14"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -140,11 +140,11 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "8.0.10"
+    version = "8.0.11"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
-    version = "2.6.12"
+    version = "2.6.13"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
