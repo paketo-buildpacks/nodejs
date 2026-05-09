@@ -6,7 +6,7 @@
   uri = "docker://docker.io/paketobuildpacks/cpython:1.18.25"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/node-engine:8.0.14"
+  uri = "docker://docker.io/paketobuildpacks/node-engine:8.1.0"
 
 [[dependencies]]
   uri = "docker://docker.io/paketobuildpacks/node-start:2.6.16"
