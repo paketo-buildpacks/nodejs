@@ -27,34 +27,34 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/cpython"
     optional = true
-    version = "1.18.25"
+    version = "1.18.26"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "8.1.0"
+    version = "8.1.1"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn"
-    version = "2.2.29"
+    version = "2.2.30"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-install"
-    version = "2.7.11"
+    version = "2.7.12"
 
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
     optional = true
-    version = "2.3.34"
+    version = "2.3.35"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
     optional = true
-    version = "2.6.16"
+    version = "2.6.17"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-start"
     optional = true
-    version = "2.5.17"
+    version = "2.5.18"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -86,30 +86,30 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/cpython"
     optional = true
-    version = "1.18.25"
+    version = "1.18.26"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "8.1.0"
+    version = "8.1.1"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-install"
-    version = "2.3.17"
+    version = "2.3.18"
 
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
     optional = true
-    version = "2.3.34"
+    version = "2.3.35"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
     optional = true
-    version = "2.6.16"
+    version = "2.6.17"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-start"
     optional = true
-    version = "2.4.17"
+    version = "2.4.18"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -140,11 +140,11 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "8.1.0"
+    version = "8.1.1"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
-    version = "2.6.16"
+    version = "2.6.17"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
