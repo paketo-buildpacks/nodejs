@@ -3,28 +3,28 @@
   uri = "build/buildpack.tgz"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/cpython:1.18.29"
+  uri = "docker://docker.io/paketobuildpacks/cpython:1.18.30"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/node-engine:8.1.4"
+  uri = "docker://docker.io/paketobuildpacks/node-engine:8.1.5"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/node-start:2.6.20"
+  uri = "docker://docker.io/paketobuildpacks/node-start:2.6.21"
 
 [[dependencies]]
   uri = "docker://docker.io/paketobuildpacks/npm-install:2.3.21"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/npm-start:2.4.21"
+  uri = "docker://docker.io/paketobuildpacks/npm-start:2.4.22"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/yarn-install:2.7.15"
+  uri = "docker://docker.io/paketobuildpacks/yarn-install:2.7.16"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/yarn:2.2.33"
+  uri = "docker://docker.io/paketobuildpacks/yarn:2.2.34"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/yarn-start:2.5.21"
+  uri = "docker://docker.io/paketobuildpacks/yarn-start:2.5.22"
 
 [[dependencies]]
   uri = "docker://docker.io/paketobuildpacks/procfile:5.13.3"
@@ -39,7 +39,7 @@
   uri = "docker://docker.io/paketobuildpacks/ca-certificates:3.12.3"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/node-run-script:2.3.38"
+  uri = "docker://docker.io/paketobuildpacks/node-run-script:2.3.39"
 
 [[dependencies]]
   uri = "docker://docker.io/paketobuildpacks/watchexec:3.9.4"

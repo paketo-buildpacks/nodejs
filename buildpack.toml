@@ -27,34 +27,34 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/cpython"
     optional = true
-    version = "1.18.29"
+    version = "1.18.30"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "8.1.4"
+    version = "8.1.5"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn"
-    version = "2.2.33"
+    version = "2.2.34"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-install"
-    version = "2.7.15"
+    version = "2.7.16"
 
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
     optional = true
-    version = "2.3.38"
+    version = "2.3.39"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
     optional = true
-    version = "2.6.20"
+    version = "2.6.21"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-start"
     optional = true
-    version = "2.5.21"
+    version = "2.5.22"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -86,11 +86,11 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/cpython"
     optional = true
-    version = "1.18.29"
+    version = "1.18.30"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "8.1.4"
+    version = "8.1.5"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-install"
@@ -99,17 +99,17 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
     optional = true
-    version = "2.3.38"
+    version = "2.3.39"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
     optional = true
-    version = "2.6.20"
+    version = "2.6.21"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-start"
     optional = true
-    version = "2.4.21"
+    version = "2.4.22"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
@@ -140,11 +140,11 @@ api = "0.7"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "8.1.4"
+    version = "8.1.5"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
-    version = "2.6.20"
+    version = "2.6.21"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
