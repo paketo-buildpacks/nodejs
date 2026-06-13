@@ -27,22 +27,22 @@
   uri = "docker://docker.io/paketobuildpacks/yarn-start:2.5.22"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/procfile:5.13.3"
+  uri = "docker://docker.io/paketobuildpacks/procfile:5.13.4"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/environment-variables:4.11.3"
+  uri = "docker://docker.io/paketobuildpacks/environment-variables:4.11.4"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/image-labels:4.12.3"
+  uri = "docker://docker.io/paketobuildpacks/image-labels:4.12.4"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/ca-certificates:3.12.3"
+  uri = "docker://docker.io/paketobuildpacks/ca-certificates:3.12.4"
 
 [[dependencies]]
   uri = "docker://docker.io/paketobuildpacks/node-run-script:2.3.39"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/watchexec:3.9.4"
+  uri = "docker://docker.io/paketobuildpacks/watchexec:3.9.5"
 
 [[targets]]
   arch = "amd64"
