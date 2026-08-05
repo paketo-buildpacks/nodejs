@@ -34,6 +34,8 @@ This buildpack also includes the following utility buildpacks:
 - [CA Certificates CNB](https://github.com/paketo-buildpacks/ca-certificates)
 - [Node Run Script CNB](https://github.com/paketo-buildpacks/node-run-script)
 - [Node Module Bill of Materials CNB](https://github.com/paketo-buildpacks/node-module-bom)
+- [Watchexec CNB](https://github.com/paketo-buildpacks/watchexec)
+- [Tini CNB](https://github.com/paketo-buildpacks/tini)
 
 Check out the [Paketo Node.js docs](https://paketo.io/docs/buildpacks/language-family-buildpacks/nodejs/) for more information.
 

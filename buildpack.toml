@@ -25,6 +25,11 @@ api = "0.7"
     version = "3.9.7"
 
   [[order.group]]
+    id = "paketo-buildpacks/tini"
+    optional = true
+    version = "0.4.1"
+
+  [[order.group]]
     id = "paketo-buildpacks/cpython"
     optional = true
     version = "1.18.38"
@@ -84,6 +89,11 @@ api = "0.7"
     version = "3.9.7"
 
   [[order.group]]
+    id = "paketo-buildpacks/tini"
+    optional = true
+    version = "0.4.1"
+
+  [[order.group]]
     id = "paketo-buildpacks/cpython"
     optional = true
     version = "1.18.38"
@@ -137,6 +147,11 @@ api = "0.7"
     id = "paketo-buildpacks/watchexec"
     optional = true
     version = "3.9.7"
+
+  [[order.group]]
+    id = "paketo-buildpacks/tini"
+    optional = true
+    version = "0.4.1"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
