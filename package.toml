@@ -45,7 +45,7 @@
   uri = "docker://docker.io/paketobuildpacks/watchexec:3.9.7"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/tini:0.4.1"
+  uri = "docker://docker.io/paketobuildpacks/tini:0.4.2"
 
 [[targets]]
   arch = "amd64"
