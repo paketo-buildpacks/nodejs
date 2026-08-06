@@ -27,7 +27,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/tini"
     optional = true
-    version = "0.4.1"
+    version = "0.4.2"
 
   [[order.group]]
     id = "paketo-buildpacks/cpython"
@@ -91,7 +91,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/tini"
     optional = true
-    version = "0.4.1"
+    version = "0.4.2"
 
   [[order.group]]
     id = "paketo-buildpacks/cpython"
@@ -151,7 +151,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/tini"
     optional = true
-    version = "0.4.1"
+    version = "0.4.2"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
