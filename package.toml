@@ -15,7 +15,7 @@
   uri = "docker://docker.io/paketobuildpacks/npm-install:2.3.29"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/npm-start:2.4.29"
+  uri = "docker://docker.io/paketobuildpacks/npm-start:2.5.0"
 
 [[dependencies]]
   uri = "docker://docker.io/paketobuildpacks/yarn-install:2.7.24"
