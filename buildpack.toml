@@ -27,20 +27,20 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/tini"
     optional = true
-    version = "0.4.7"
+    version = "0.4.8"
 
   [[order.group]]
     id = "paketo-buildpacks/cpython"
     optional = true
-    version = "1.18.43"
+    version = "1.18.44"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "8.6.2"
+    version = "8.7.0"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn"
-    version = "2.4.5"
+    version = "2.4.6"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-install"
@@ -49,22 +49,22 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
     optional = true
-    version = "2.3.52"
+    version = "2.3.53"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
     optional = true
-    version = "2.7.5"
+    version = "2.7.6"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-start"
     optional = true
-    version = "2.5.35"
+    version = "2.5.36"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.14.0"
+    version = "5.15.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
@@ -74,7 +74,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.13.0"
+    version = "4.14.0"
 
 [[order]]
 
@@ -91,16 +91,16 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/tini"
     optional = true
-    version = "0.4.7"
+    version = "0.4.8"
 
   [[order.group]]
     id = "paketo-buildpacks/cpython"
     optional = true
-    version = "1.18.43"
+    version = "1.18.44"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "8.6.2"
+    version = "8.7.0"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-install"
@@ -109,22 +109,22 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
     optional = true
-    version = "2.3.52"
+    version = "2.3.53"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
     optional = true
-    version = "2.7.5"
+    version = "2.7.6"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-start"
     optional = true
-    version = "2.5.5"
+    version = "2.5.6"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.14.0"
+    version = "5.15.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
@@ -134,7 +134,7 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.13.0"
+    version = "4.14.0"
 
 [[order]]
 
@@ -151,20 +151,20 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/tini"
     optional = true
-    version = "0.4.7"
+    version = "0.4.8"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "8.6.2"
+    version = "8.7.0"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
-    version = "2.7.5"
+    version = "2.7.6"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.14.0"
+    version = "5.15.0"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
@@ -174,4 +174,4 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.13.0"
+    version = "4.14.0"
