@@ -12,7 +12,7 @@
   uri = "docker://docker.io/paketobuildpacks/node-start:2.7.12"
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/npm-install:2.3.34"
+  uri = "docker://docker.io/paketobuildpacks/npm-install:2.3.35"
 
 [[dependencies]]
   uri = "docker://docker.io/paketobuildpacks/npm-start:2.5.12"
