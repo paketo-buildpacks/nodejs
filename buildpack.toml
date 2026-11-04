@@ -17,39 +17,39 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.14.4"
+    version = "3.14.5"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "3.11.5"
+    version = "3.11.6"
 
   [[order.group]]
     id = "paketo-buildpacks/tini"
     optional = true
-    version = "0.4.14"
+    version = "0.4.15"
 
   [[order.group]]
     id = "paketo-buildpacks/cpython"
     optional = true
-    version = "1.18.50"
+    version = "1.18.51"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "8.11.1"
+    version = "8.12.0"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn"
-    version = "2.5.4"
+    version = "2.5.5"
 
   [[order.group]]
     id = "paketo-buildpacks/yarn-install"
-    version = "2.7.28"
+    version = "2.7.29"
 
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
     optional = true
-    version = "2.3.59"
+    version = "2.3.60"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
@@ -59,57 +59,57 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/yarn-start"
     optional = true
-    version = "2.5.42"
+    version = "2.5.43"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.15.6"
+    version = "5.15.7"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "4.12.1"
+    version = "4.12.2"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.14.5"
+    version = "4.14.6"
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.14.4"
+    version = "3.14.5"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "3.11.5"
+    version = "3.11.6"
 
   [[order.group]]
     id = "paketo-buildpacks/tini"
     optional = true
-    version = "0.4.14"
+    version = "0.4.15"
 
   [[order.group]]
     id = "paketo-buildpacks/cpython"
     optional = true
-    version = "1.18.50"
+    version = "1.18.51"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "8.11.1"
+    version = "8.12.0"
 
   [[order.group]]
     id = "paketo-buildpacks/npm-install"
-    version = "2.3.35"
+    version = "2.3.36"
 
   [[order.group]]
     id = "paketo-buildpacks/node-run-script"
     optional = true
-    version = "2.3.59"
+    version = "2.3.60"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
@@ -119,43 +119,43 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/npm-start"
     optional = true
-    version = "2.5.12"
+    version = "2.5.13"
 
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.15.6"
+    version = "5.15.7"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "4.12.1"
+    version = "4.12.2"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.14.5"
+    version = "4.14.6"
 
 [[order]]
 
   [[order.group]]
     id = "paketo-buildpacks/ca-certificates"
     optional = true
-    version = "3.14.4"
+    version = "3.14.5"
 
   [[order.group]]
     id = "paketo-buildpacks/watchexec"
     optional = true
-    version = "3.11.5"
+    version = "3.11.6"
 
   [[order.group]]
     id = "paketo-buildpacks/tini"
     optional = true
-    version = "0.4.14"
+    version = "0.4.15"
 
   [[order.group]]
     id = "paketo-buildpacks/node-engine"
-    version = "8.11.1"
+    version = "8.12.0"
 
   [[order.group]]
     id = "paketo-buildpacks/node-start"
@@ -164,14 +164,14 @@ api = "0.7"
   [[order.group]]
     id = "paketo-buildpacks/procfile"
     optional = true
-    version = "5.15.6"
+    version = "5.15.7"
 
   [[order.group]]
     id = "paketo-buildpacks/environment-variables"
     optional = true
-    version = "4.12.1"
+    version = "4.12.2"
 
   [[order.group]]
     id = "paketo-buildpacks/image-labels"
     optional = true
-    version = "4.14.5"
+    version = "4.14.6"
