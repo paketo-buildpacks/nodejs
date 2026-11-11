@@ -1,56 +1,55 @@
-
 [buildpack]
-  uri = "build/buildpack.tgz"
+uri = 'build/buildpack.tgz'
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/cpython:1.18.51"
+uri = 'docker://docker.io/paketobuildpacks/cpython:1.19.0'
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/node-engine:8.12.0"
+uri = 'docker://docker.io/paketobuildpacks/node-engine:8.12.1'
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/node-start:2.7.13"
+uri = 'docker://docker.io/paketobuildpacks/node-start:2.7.14'
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/npm-install:2.3.36"
+uri = 'docker://docker.io/paketobuildpacks/npm-install:2.3.37'
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/npm-start:2.5.13"
+uri = 'docker://docker.io/paketobuildpacks/npm-start:2.5.14'
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/yarn-install:2.7.29"
+uri = 'docker://docker.io/paketobuildpacks/yarn-install:2.7.30'
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/yarn:2.5.5"
+uri = 'docker://docker.io/paketobuildpacks/yarn:2.5.6'
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/yarn-start:2.5.43"
+uri = 'docker://docker.io/paketobuildpacks/yarn-start:2.5.44'
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/procfile:5.15.7"
+uri = 'docker://docker.io/paketobuildpacks/procfile:5.15.8'
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/environment-variables:4.12.2"
+uri = 'docker://docker.io/paketobuildpacks/environment-variables:4.12.3'
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/image-labels:4.14.6"
+uri = 'docker://docker.io/paketobuildpacks/image-labels:4.14.7'
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/ca-certificates:3.14.5"
+uri = 'docker://docker.io/paketobuildpacks/ca-certificates:3.14.6'
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/node-run-script:2.3.60"
+uri = 'docker://docker.io/paketobuildpacks/node-run-script:2.3.61'
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/watchexec:3.11.6"
+uri = 'docker://docker.io/paketobuildpacks/watchexec:3.11.7'
 
 [[dependencies]]
-  uri = "docker://docker.io/paketobuildpacks/tini:0.4.15"
+uri = 'docker://docker.io/paketobuildpacks/tini:0.4.16'
 
 [[targets]]
-  arch = "amd64"
-  os = "linux"
+os = 'linux'
+arch = 'amd64'
 
 [[targets]]
-  arch = "arm64"
-  os = "linux"
+os = 'linux'
+arch = 'arm64'
