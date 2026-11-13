@@ -35,7 +35,7 @@ optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/node-engine'
-version = '8.12.1'
+version = '8.12.2'
 
 [[order.group]]
 id = 'paketo-buildpacks/yarn'
@@ -98,7 +98,7 @@ optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/node-engine'
-version = '8.12.1'
+version = '8.12.2'
 
 [[order.group]]
 id = 'paketo-buildpacks/npm-install'
@@ -152,7 +152,7 @@ optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/node-engine'
-version = '8.12.1'
+version = '8.12.2'
 
 [[order.group]]
 id = 'paketo-buildpacks/node-start'

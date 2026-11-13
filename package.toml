@@ -5,7 +5,7 @@ uri = 'build/buildpack.tgz'
 uri = 'docker://docker.io/paketobuildpacks/cpython:1.19.0'
 
 [[dependencies]]
-uri = 'docker://docker.io/paketobuildpacks/node-engine:8.12.1'
+uri = 'docker://docker.io/paketobuildpacks/node-engine:8.12.2'
 
 [[dependencies]]
 uri = 'docker://docker.io/paketobuildpacks/node-start:2.7.14'
