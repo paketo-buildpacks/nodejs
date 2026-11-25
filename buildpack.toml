@@ -15,17 +15,17 @@ include-files = ['buildpack.toml']
 [[order]]
 [[order.group]]
 id = 'paketo-buildpacks/ca-certificates'
-version = '3.14.7'
+version = '3.14.8'
 optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/watchexec'
-version = '3.11.8'
+version = '3.11.9'
 optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/tini'
-version = '0.5.0'
+version = '0.5.1'
 optional = true
 
 [[order.group]]
@@ -35,60 +35,60 @@ optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/node-engine'
-version = '8.12.3'
+version = '8.12.4'
 
 [[order.group]]
 id = 'paketo-buildpacks/yarn'
-version = '2.5.7'
+version = '2.6.0'
 
 [[order.group]]
 id = 'paketo-buildpacks/yarn-install'
-version = '2.7.31'
+version = '2.7.32'
 
 [[order.group]]
 id = 'paketo-buildpacks/node-run-script'
-version = '2.3.62'
+version = '2.3.63'
 optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/node-start'
-version = '2.7.15'
+version = '2.7.16'
 optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/yarn-start'
-version = '2.5.45'
+version = '2.5.46'
 optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/procfile'
-version = '5.15.9'
+version = '5.15.10'
 optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/environment-variables'
-version = '4.12.4'
+version = '4.12.5'
 optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/image-labels'
-version = '4.14.8'
+version = '4.14.9'
 optional = true
 
 [[order]]
 [[order.group]]
 id = 'paketo-buildpacks/ca-certificates'
-version = '3.14.7'
+version = '3.14.8'
 optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/watchexec'
-version = '3.11.8'
+version = '3.11.9'
 optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/tini'
-version = '0.5.0'
+version = '0.5.1'
 optional = true
 
 [[order.group]]
@@ -98,77 +98,77 @@ optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/node-engine'
-version = '8.12.3'
+version = '8.12.4'
 
 [[order.group]]
 id = 'paketo-buildpacks/npm-install'
-version = '2.3.38'
+version = '2.3.39'
 
 [[order.group]]
 id = 'paketo-buildpacks/node-run-script'
-version = '2.3.62'
+version = '2.3.63'
 optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/node-start'
-version = '2.7.15'
+version = '2.7.16'
 optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/npm-start'
-version = '2.5.15'
+version = '2.5.16'
 optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/procfile'
-version = '5.15.9'
+version = '5.15.10'
 optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/environment-variables'
-version = '4.12.4'
+version = '4.12.5'
 optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/image-labels'
-version = '4.14.8'
+version = '4.14.9'
 optional = true
 
 [[order]]
 [[order.group]]
 id = 'paketo-buildpacks/ca-certificates'
-version = '3.14.7'
+version = '3.14.8'
 optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/watchexec'
-version = '3.11.8'
+version = '3.11.9'
 optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/tini'
-version = '0.5.0'
+version = '0.5.1'
 optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/node-engine'
-version = '8.12.3'
+version = '8.12.4'
 
 [[order.group]]
 id = 'paketo-buildpacks/node-start'
-version = '2.7.15'
+version = '2.7.16'
 
 [[order.group]]
 id = 'paketo-buildpacks/procfile'
-version = '5.15.9'
+version = '5.15.10'
 optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/environment-variables'
-version = '4.12.4'
+version = '4.12.5'
 optional = true
 
 [[order.group]]
 id = 'paketo-buildpacks/image-labels'
-version = '4.14.8'
+version = '4.14.9'
 optional = true
